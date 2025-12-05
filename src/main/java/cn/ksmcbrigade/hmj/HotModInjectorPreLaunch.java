@@ -35,7 +35,7 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
         System.setProperty("mixin.debug.verbose","true");
 
         try {
-            FileUtils.writeByteArrayToFile(new File("mixin-agent.jar"), IOUtils.toByteArray(HotModInjectorPreLaunch.class.getResourceAsStream("/sponge-mixin-0.15.3+mixin.0.8.7.jar")));
+            //FileUtils.writeByteArrayToFile(new File("mixin-agent.jar"), IOUtils.toByteArray(HotModInjectorPreLaunch.class.getResourceAsStream("/sponge-mixin-0.15.3+mixin.0.8.7.jar")));
             try {
                 //UnsafeUtils.loadAgent(new File("mixin-agent.jar").getAbsoluteFile().getPath());
                 if(!FabricLoader.getInstance().isDevelopmentEnvironment()){

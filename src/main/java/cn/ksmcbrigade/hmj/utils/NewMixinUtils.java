@@ -9,12 +9,14 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.ModContainerImpl;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfig;
+import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.transformer.Config;
 import org.spongepowered.asm.mixin.transformer.IMixinTransformer;
 import org.spongepowered.asm.mixin.transformer.ext.Extensions;
@@ -64,6 +66,21 @@ public class NewMixinUtils {
         applyM.invoke(null,configToModMap);
     }
 
+    public static void selectMixinConfigs(ModContainerImpl modContainer) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        for (String mixinConfig : modContainer.getMetadata().getMixinConfigs(FabricLoader.getInstance().getEnvironmentType())) {
+            Optional<Config> configOptional = getMixinConfig(mixinConfig);
+            if(configOptional.isPresent()) {
+                IMixinConfig config = configOptional.get().getConfig();
+                if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinConfig").isAssignableFrom(config.getClass())){
+                    Method method = config.getClass().getDeclaredMethod("onSelect");
+                    method.setAccessible(true);
+                    log("Invoking MixinConfig::onSelect ...");
+                    method.invoke(config);
+                }
+            }
+        }
+    }
+
     public static void addMixinsIntoMixinClassLoader(ModContainerImpl modContainer) throws NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException {
         for (Class<?> registeredMixin : getRegisteredMixins(modContainer)) {
             log(registeredMixin.getName());
@@ -82,17 +99,33 @@ public class NewMixinUtils {
 
                 if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinConfig").isAssignableFrom(config.getClass())){
                     ArrayList<String> mixinsWithoutPackage = new ArrayList<>();
-                    mixinClasses.forEach((a)->mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),"")));
+                    mixinClasses.forEach((a)-> mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),!config.getMixinPackage().endsWith(".")?".":"")));
                     Method method = config.getClass().getDeclaredMethod("prepareMixins", String.class,List.class,boolean.class, Extensions.class);
                     method.setAccessible(true);
+
+                    IMixinConfigPlugin plugin = getMixinConfigPlugin(config);
+
                     if(getActiveExtensions() instanceof Extensions extensions){
-                        log("Invoking prepareMixins...");
-                        method.invoke(config,mixinConfig,mixinsWithoutPackage,config.getPlugin()==null,extensions);
+                        log("Invoking MixinConfig::prepareMixins ...");
+                        method.invoke(config,mixinConfig,mixinsWithoutPackage,plugin==null,extensions);
                     }
                 }
             }
         }
         NewMixinUtils.infoMod(modContainer);
+    }
+
+    private static @Nullable IMixinConfigPlugin getMixinConfigPlugin(IMixinConfig config) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+        IMixinConfigPlugin plugin = null;
+        Field pluginF = config.getClass().getDeclaredField("plugin");
+        pluginF.setAccessible(true);
+        Object pluginHandle = pluginF.get(config);
+        if(pluginHandle!=null){
+            Method pluginM = pluginHandle.getClass().getDeclaredMethod("get");
+            pluginM.setAccessible(true);
+            plugin = (IMixinConfigPlugin) pluginM.invoke(pluginHandle);
+        }
+        return plugin;
     }
 
     public static List<Class<?>> getMixinClasses(String mixinConfigFile) throws IOException {
