@@ -5,16 +5,20 @@ import cn.ksmcbrigade.hmj.transformers.ClassByteGetter;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.llamalad7.mixinextras.transformer.MixinTransformer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.ModContainerImpl;
 import net.fabricmc.loader.impl.launch.FabricLauncherBase;
+import net.fabricmc.loader.impl.transformer.FabricTransformer;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.LdcInsnNode;
 import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfig;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -101,29 +105,77 @@ public class NewMixinUtils {
                 }
 
                 if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinConfig").isAssignableFrom(config.getClass())){
-                    ArrayList<String> mixinsWithoutPackage = new ArrayList<>();
-                    mixinClasses.forEach((a)-> mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),!config.getMixinPackage().endsWith(".")?".":"")));
-                    Method method = config.getClass().getDeclaredMethod("prepareMixins", String.class,List.class,boolean.class, Extensions.class);
+                    //ArrayList<String> mixinsWithoutPackage = new ArrayList<>();
+                    //mixinClasses.forEach((a)-> mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),!config.getMixinPackage().endsWith(".")?".":"")));
+                    Method method = config.getClass().getDeclaredMethod("postInitialise", Extensions.class);
                     method.setAccessible(true);
 
-                    IMixinConfigPlugin plugin = getMixinConfigPlugin(config);
+                    //IMixinConfigPlugin plugin = getMixinConfigPlugin(config);
 
                     if(getActiveExtensions() instanceof Extensions extensions){
-                        log("Invoking MixinConfig::prepareMixins ...");
-                        method.invoke(config,mixinConfig,mixinsWithoutPackage,plugin==null,extensions);
+                        log("Invoking MixinConfig::postInitialise ...");
+                        method.invoke(config,extensions);
                     }
+                    addIntoMixinProcessor(config);
                 }
 
                 for (List<Class<?>> value : targetClasses.values()) {
                     for (Class<?> aClass : value) {
+                        logMixinsForTargetClass(aClass);
                         log("Retransforming "+aClass);
                         getInstrumentation().retransformClasses(aClass);
-                        getInstrumentation().redefineClasses(new ClassDefinition(aClass,FabricLauncherBase.getLauncher().getClassByteArray(aClass.getName(),true)));
+                        byte[] bytes = FabricLauncherBase.getLauncher().getClassByteArray(aClass.getName(),true);
+                        ClassNode node = new ClassNode();
+                        ClassReader reader = new ClassReader(bytes);
+                        reader.accept(node,ClassReader.EXPAND_FRAMES);
+                        node.methods.forEach((m)->{
+                            if(m.name.equals(node.name) || m.name.equals("method_25426")){
+                                for (AbstractInsnNode instruction : m.instructions) {
+                                    if(instruction instanceof LdcInsnNode ldcInsnNode) System.out.println(ldcInsnNode.cst);
+                                }
+                            }
+                        });
                     }
                 }
             }
         }
         NewMixinUtils.infoMod(modContainer);
+    }
+
+    private static void addIntoMixinProcessor(Object mixinConfig) throws ClassNotFoundException {
+        if(!(mixinConfig instanceof IMixinConfig)){
+            log("WARN: The object is not a mixin config: "+mixinConfig);
+            return;
+        }
+        IMixinTransformer transformer = UnsafeUtils.getFieldValue(HotModInjectorPreLaunch.agents.get(0),"classTransformer",IMixinTransformer.class);
+        if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinTransformer").isAssignableFrom(transformer.getClass())){
+            Object processor = UnsafeUtils.getFieldValue(transformer,"processor",Object.class);
+            List<Object> configs = UnsafeUtils.getFieldValue(processor,"configs",List.class);
+            if (configs != null) {
+                log("Adding "+mixinConfig + " into the mixin processor...");
+                configs.add(mixinConfig);
+            }
+            UnsafeUtils.setFieldValue(processor,"pendingConfigs",configs);
+            UnsafeUtils.setFieldValue(processor,"mixins",configs);
+        }
+    }
+
+    private static void logMixinsForTargetClass(Class<?> aClass) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
+        IMixinTransformer transformer = UnsafeUtils.getFieldValue(HotModInjectorPreLaunch.agents.get(0),"classTransformer",IMixinTransformer.class);
+        if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinTransformer").isAssignableFrom(transformer.getClass())){
+            Object processor = UnsafeUtils.getFieldValue(transformer,"processor",Object.class);
+            List<Object> configs = UnsafeUtils.getFieldValue(processor,"configs",List.class);
+            if (configs != null) {
+                for (Object config : configs) {
+                    if(config instanceof IMixinConfig iMixinConfig){
+                        System.out.println(iMixinConfig.getMixinPackage());
+                        for (String target : iMixinConfig.getTargets()) {
+                            System.out.println(target);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static @Nullable IMixinConfigPlugin getMixinConfigPlugin(IMixinConfig config) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
