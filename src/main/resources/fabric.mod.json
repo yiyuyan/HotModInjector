@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "hmj",
+  "version": "${version}",
+  "name": "HotModInjector",
+  "description": "Make you can add the mods in the game runtime.\nThe injected mods' mixin will not work,and don't support the mods with child mods,we can't fix it now.",
+  "authors": [
+    "KSmc_brigade"
+  ],
+  "contact": {
+    "repo": "https://github.com/yiyuyan/HotModInjector"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "cn.ksmcbrigade.hmj.HotModInjector"
+    ],
+    "preLaunch": [
+      "cn.ksmcbrigade.hmj.HotModInjectorPreLaunch"
+    ]
+  },
+  "mixins": [
+    "hmj.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

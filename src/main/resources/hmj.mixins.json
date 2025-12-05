@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.ksmcbrigade.hmj.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "SimpleRegistryMixin"
+  ],
+  "client": [
+    "ClientTick",
+    "KeyBindingRegistryImplMixin",
+    "TitleScreenMixin",
+    "accessors.GameOptionsAccessor",
+    "ex.HotInstallMod"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

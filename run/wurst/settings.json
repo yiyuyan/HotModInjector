@@ -1,0 +1,1012 @@
+{
+  "AimAssist": {
+    "Range": 4.5,
+    "Rotation Speed": 600.0,
+    "FOV": 120.0,
+    "Aim at": "Auto",
+    "Ignore mouse input": 0.0,
+    "Check line of sight": true,
+    "Aim while blocking": false,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": true,
+    "Filter passive water mobs": true,
+    "Filter babies": true,
+    "Filter bats": true,
+    "Filter slimes": true,
+    "Filter pets": true,
+    "Filter villagers": true,
+    "Filter zombie villagers": true,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter invisible": true,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": true,
+    "Filter end crystals": true
+  },
+  "AirPlace": {
+    "Range": 5.0,
+    "Guide": true,
+    "Guide color": "#FF0000"
+  },
+  "AnchorAura": {
+    "Range": 6.0,
+    "Auto-place anchors": true,
+    "Face anchors": "Off",
+    "Check line of sight": false,
+    "Swing hand": "Client-side",
+    "Take items from": "Inventory",
+    "Filter players": false,
+    "Filter hostile mobs": true,
+    "Filter neutral mobs": "On",
+    "Filter passive mobs": true,
+    "Filter passive water mobs": true,
+    "Filter bats": true,
+    "Filter slimes": true,
+    "Filter villagers": true,
+    "Filter zombie villagers": true,
+    "Filter golems": true,
+    "Filter piglins": "On",
+    "Filter zombie piglins": "On",
+    "Filter shulkers": true,
+    "Filter allays": true,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter armor stands": true
+  },
+  "AntiAFK": {
+    "Use AI": true,
+    "AI range": 16.0,
+    "Non-AI range": 1.0,
+    "Wait time": 2.5,
+    "Wait time randomization": 0.5,
+    "Show wait time": true
+  },
+  "AntiKnockback": {
+    "Horizontal Strength": 1.0,
+    "Vertical Strength": 1.0
+  },
+  "AntiWaterPush": {
+    "Prevent slowdown": false
+  },
+  "ArrowDMG": {
+    "Packets": 200.0,
+    "Trident yeet mode": false
+  },
+  "AutoArmor": {
+    "Use enchantments": true,
+    "Swap while moving": false,
+    "Delay": 2.0
+  },
+  "AutoBuild": {
+    "Template": "Bridge.json",
+    "Range": 6.0,
+    "Check line of sight": false,
+    "InstaBuild": true,
+    "Always FastPlace": true
+  },
+  "AutoComplete": {
+    "OpenAI model": "gpt-4o-2024-08-06",
+    "Max tokens": 16.0,
+    "Temperature": 1.0,
+    "Top P": 1.0,
+    "Presence penalty": 0.0,
+    "Frequency penalty": 0.0,
+    "Stop sequence": "Line Break",
+    "Context length": 10.0,
+    "Filter server messages": false,
+    "Custom model": "",
+    "Custom model type": "Chat",
+    "OpenAI chat endpoint": "https://api.openai.com/v1/chat/completions",
+    "OpenAI legacy endpoint": "https://api.openai.com/v1/completions",
+    "Max suggestions per draft": 3.0,
+    "Max suggestions kept": 100.0,
+    "Max suggestions shown": 5.0
+  },
+  "AutoDrop": {
+    "Items": "default"
+  },
+  "AutoEat": {
+    "Target hunger": 10.0,
+    "Min hunger": 6.5,
+    "Injured hunger": 10.0,
+    "Injury threshold": 1.5,
+    "Take items from": "Hotbar",
+    "Allow offhand": true,
+    "Eat while walking": false,
+    "Allow hunger effect": true,
+    "Allow poison effect": false,
+    "Allow chorus fruit": false
+  },
+  "AutoFarm": {
+    "Range": 5.0,
+    "Replant": true
+  },
+  "AutoFish": {
+    "Bite mode": "Sound",
+    "Valid range": 1.5,
+    "Catch delay": 0.0,
+    "Retry delay": 15.0,
+    "Patience": 60.0,
+    "Debug draw": false,
+    "DD color": "#FF0000",
+    "Stop when out of rods": false,
+    "Stop when inv full": false,
+    "Shallow water warning": true,
+    "mcMMO mode": false,
+    "mcMMO range": 3.0,
+    "mcMMO range bug": true,
+    "mcMMO limit": 10.0
+  },
+  "AutoLeave": {
+    "Health": 4.0,
+    "Mode": "Quit",
+    "Disable AutoReconnect": true,
+    "Totems": 11.0
+  },
+  "AutoLibrarian": {
+    "Wanted books": "default",
+    "Lock in trade": false,
+    "Update books": "Remove",
+    "Range": 5.0,
+    "Facing": "Server-side",
+    "Swing hand": "Server-side",
+    "Repair mode": 1.0
+  },
+  "AutoMine": {
+    "Super fast mode": false
+  },
+  "AutoPotion": {
+    "Health": 6.0
+  },
+  "AutoReconnect": {
+    "Wait time": 5.0
+  },
+  "AutoRespawn": {
+    "Death screen button": true
+  },
+  "AutoSoup": {
+    "Health": 6.5
+  },
+  "AutoSprint": {
+    "Omnidirectional Sprint": false,
+    "Hungry Sprint": false
+  },
+  "AutoSteal": {
+    "Steal/Store buttons": true,
+    "Delay": 100.0
+  },
+  "AutoSword": {
+    "Priority": "Speed (swords)",
+    "Switch back": true,
+    "Release time": 10.0
+  },
+  "AutoTool": {
+    "Use swords": false,
+    "Use hands": true,
+    "Repair mode": 0.0,
+    "Switch back": false
+  },
+  "AutoTotem": {
+    "Show totem counter": true,
+    "Delay": 0.0,
+    "Health": 0.0
+  },
+  "BaseFinder": {
+    "Natural Blocks": "default",
+    "Color": "#FF0000"
+  },
+  "Blink": {
+    "Limit": 0.0
+  },
+  "BoatFly": {
+    "Change Forward Speed": false,
+    "Forward Speed": 1.0,
+    "Upward Speed": 0.3
+  },
+  "BonemealAura": {
+    "Range": 4.25,
+    "Mode": "Fast",
+    "Automation": "Right Click",
+    "Saplings": true,
+    "Crops": true,
+    "Stems": true,
+    "Cocoa": true,
+    "Other": false
+  },
+  "BowAimbot": {
+    "Priority": "Angle+Dist",
+    "Predict movement": 0.2,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false,
+    "ESP color": "#FF0000"
+  },
+  "BuildRandom": {
+    "Range": 5.0,
+    "Max attempts": 128.0,
+    "Check held item": true,
+    "Check line of sight": false,
+    "Facing": "Server-side",
+    "Swing hand": "Server-side",
+    "Always FastPlace": false,
+    "Place while breaking": false,
+    "Place while riding": false,
+    "Indicator": true
+  },
+  "BunnyHop": {
+    "Jump if": "Sprinting"
+  },
+  "CameraDistance": {
+    "Distance": 12.0
+  },
+  "CaveFinder": {
+    "Area": "11x11 chunks",
+    "Limit": 5.0,
+    "Color": "#FF0000",
+    "Opacity": 0.0
+  },
+  "ChatTranslator": {
+    "Translate": "Received messages",
+    "Your language": "English",
+    "Other language": "Chinese (simplified)",
+    "Detect received language": true,
+    "Detect sent language": true,
+    "Filter own messages": true
+  },
+  "ChestESP": {
+    "Style": "Boxes only",
+    "Chest color": "#00FF00",
+    "Include trap chests": true,
+    "Trap chest color": "#FF8000",
+    "Include ender chests": true,
+    "Ender color": "#00FFFF",
+    "Include chest carts": true,
+    "Chest cart color": "#FFFF00",
+    "Include chest boats": true,
+    "Chest boat color": "#FFFF00",
+    "Include barrels": true,
+    "Barrel color": "#00FF00",
+    "Include shulkers": true,
+    "Shulker color": "#FF00FF",
+    "Include hoppers": false,
+    "Hopper color": "#FFFFFF",
+    "Include hopper carts": false,
+    "Hopper cart color": "#FFFF00",
+    "Include droppers": false,
+    "Dropper color": "#FFFFFF",
+    "Include dispensers": false,
+    "Dispenser color": "#FF8000",
+    "Include furnaces": false,
+    "Furnace color": "#FF0000"
+  },
+  "ClickAura": {
+    "Range": 5.0,
+    "Speed": 0.0,
+    "Priority": "Angle",
+    "FOV": 360.0,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "ClickGUI": {
+    "Background": "#404040",
+    "Accent": "#101010",
+    "Text": "#F0F0F0",
+    "Opacity": 0.5,
+    "Tooltip opacity": 0.75,
+    "Max height": 200.0,
+    "Max settings height": 200.0
+  },
+  "CreativeFlight": {
+    "Anti-Kick": false,
+    "Anti-Kick Interval": 30.0,
+    "Anti-Kick Distance": 0.07
+  },
+  "Criticals": {
+    "Mode": "Packet"
+  },
+  "CrystalAura": {
+    "Range": 6.0,
+    "Auto-place crystals": true,
+    "Face crystals": "Off",
+    "Check line of sight": false,
+    "Swing hand": "Client-side",
+    "Take items from": "Inventory",
+    "Filter players": false,
+    "Filter hostile mobs": true,
+    "Filter neutral mobs": "On",
+    "Filter passive mobs": true,
+    "Filter passive water mobs": true,
+    "Filter bats": true,
+    "Filter slimes": true,
+    "Filter villagers": true,
+    "Filter zombie villagers": true,
+    "Filter golems": true,
+    "Filter piglins": "On",
+    "Filter zombie piglins": "On",
+    "Filter shulkers": true,
+    "Filter allays": true,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter armor stands": true
+  },
+  "Excavator": {
+    "Range": 5.0,
+    "Mode": "Fast"
+  },
+  "ExtraElytra": {
+    "Instant fly": true,
+    "Speed control": true,
+    "Height control": false,
+    "Stop flying in water": true
+  },
+  "FastBreak": {
+    "Activation chance": 1.0,
+    "Legit mode": false
+  },
+  "FeedAura": {
+    "Range": 5.0,
+    "Filter babies": true,
+    "Filter untamed": false,
+    "Filter horse-like animals": true
+  },
+  "FightBot": {
+    "Range": 4.25,
+    "Speed": 0.0,
+    "Swing hand": "Client-side",
+    "Distance": 3.0,
+    "Use AI (experimental)": false,
+    "Pause on containers": true,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "Flight": {
+    "Horizontal Speed": 1.0,
+    "Vertical Speed": 1.0,
+    "Slow sneaking": true,
+    "Anti-Kick": false,
+    "Anti-Kick Interval": 30.0,
+    "Anti-Kick Distance": 0.07
+  },
+  "Follow": {
+    "Distance": 1.0,
+    "Use AI (experimental)": false,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": true,
+    "Filter neutral mobs": true,
+    "Filter passive mobs": true,
+    "Filter passive water mobs": true,
+    "Filter babies": true,
+    "Filter bats": true,
+    "Filter slimes": true,
+    "Filter pets": true,
+    "Filter villagers": true,
+    "Filter zombie villagers": true,
+    "Filter golems": true,
+    "Filter piglins": true,
+    "Filter zombie piglins": true,
+    "Filter endermen": true,
+    "Filter shulkers": true,
+    "Filter allays": true,
+    "Filter invisible": false,
+    "Filter armor stands": true,
+    "Filter minecarts": true
+  },
+  "Freecam": {
+    "Speed": 1.0,
+    "Tracer": false,
+    "Tracer color": "#FFFFFF"
+  },
+  "Fullbright": {
+    "Method": "Gamma",
+    "Fade": true,
+    "Default brightness": 0.5
+  },
+  "Glide": {
+    "Fall speed": 0.125,
+    "Move speed": 1.2,
+    "Min height": 0.0
+  },
+  "HandNoClip": {
+    "Blocks": "default"
+  },
+  "HighJump": {
+    "Height": 6.0
+  },
+  "InvWalk": {
+    "Allow ClickGUI": true,
+    "Allow other screens": true,
+    "Allow sneak key": true,
+    "Allow sprint key": true,
+    "Allow jump key": true
+  },
+  "ItemESP": {
+    "Style": "Boxes only",
+    "Box size": "Fancy",
+    "Color": "#FFFF00"
+  },
+  "ItemGenerator": {
+    "Speed": 1.0,
+    "Stack size": 1.0
+  },
+  "Jesus": {
+    "NoCheat+ bypass": false
+  },
+  "Kaboom": {
+    "Power": 128.0,
+    "Sound": true,
+    "Particles": true
+  },
+  "Killaura": {
+    "Range": 5.0,
+    "Speed": 0.0,
+    "Speed randomization": 100.0,
+    "Priority": "Angle",
+    "FOV": 360.0,
+    "Swing hand": "Client-side",
+    "Damage indicator": true,
+    "Pause on containers": true,
+    "Check line of sight": false,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "KillauraLegit": {
+    "Range": 4.25,
+    "Speed": 0.0,
+    "Speed randomization": 100.0,
+    "Rotation Speed": 600.0,
+    "Priority": "Angle",
+    "FOV": 360.0,
+    "Swing hand": "Client-side",
+    "Damage indicator": true,
+    "Filter players": false,
+    "Filter sleeping": true,
+    "Filter flying": 0.5,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": true,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "KillPotion": {
+    "Potion type": "Splash"
+  },
+  "MassTPA": {
+    "Command": "/tpa",
+    "Delay": 20.0,
+    "Ignore errors": false,
+    "Stop when accepted": true
+  },
+  "MileyCyrus": {
+    "Twerk speed": 5.0
+  },
+  "MobESP": {
+    "Style": "Boxes only",
+    "Box size": "Fancy",
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter armor stands": true
+  },
+  "MobSpawnESP": {
+    "Draw distance": "9x9 chunks",
+    "Night color": "#FFFF00",
+    "Day color": "#FF0000",
+    "Opacity": 0.5,
+    "Depth test": true
+  },
+  "MultiAura": {
+    "Range": 5.0,
+    "Speed": 0.0,
+    "FOV": 360.0,
+    "Swing hand": "Client-side",
+    "Pause on containers": false,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "NameTags": {
+    "Scale": 1.0,
+    "Unlimited range": true,
+    "See-through mode": false,
+    "Always show named mobs": true,
+    "Always show player names": false
+  },
+  "NewChunks": {
+    "Style": "Outline",
+    "Show": "New Chunks",
+    "Show reasons": false,
+    "Show counter": false,
+    "Altitude": 0.0,
+    "Draw distance": 32.0,
+    "Opacity": 0.75,
+    "New chunks color": "#FF0000",
+    "Old chunks color": "#0000FF",
+    "Log chunks": false
+  },
+  "NoBackground": {
+    "All GUIs": false
+  },
+  "NoFall": {
+    "Allow elytra": false
+  },
+  "NoFireOverlay": {
+    "Offset": 0.6
+  },
+  "NoShieldOverlay": {
+    "Blocking offset": 0.5,
+    "Non-blocking offset": 0.2
+  },
+  "NoWeather": {
+    "Disable Rain": true,
+    "Change World Time": false,
+    "Time": 6000.0,
+    "Change Moon Phase": false,
+    "Moon Phase": 0.0
+  },
+  "Nuker": {
+    "Range": 5.0,
+    "Shape": "Sphere",
+    "Flat mode": false,
+    "Mode": "Normal",
+    "ID": "minecraft:air",
+    "Lock ID": false,
+    "MultiID List": "default",
+    "Swing hand": "Server-side"
+  },
+  "NukerLegit": {
+    "Range": 4.25,
+    "Shape": "Sphere",
+    "Flat mode": false,
+    "Mode": "Normal",
+    "ID": "minecraft:air",
+    "Lock ID": false,
+    "MultiID List": "default",
+    "Swing hand": "Client-side"
+  },
+  "Parkour": {
+    "Min depth": 0.5,
+    "Edge distance": 0.001,
+    "Jump while sneaking": false
+  },
+  "PlayerESP": {
+    "Style": "Lines and boxes",
+    "Box size": "Fancy",
+    "Filter sleeping": false,
+    "Filter invisible": false
+  },
+  "PortalESP": {
+    "Style": "Boxes only",
+    "Include nether portals": true,
+    "Nether portal color": "#FF0000",
+    "Include end portals": true,
+    "End portal color": "#00FF00",
+    "Include end portal frames": true,
+    "End portal frame color": "#0000FF",
+    "Include end gateways": true,
+    "End gateway color": "#FFFF00",
+    "Area": "11x11 chunks"
+  },
+  "Protect": {
+    "Speed": 0.0,
+    "Swing hand": "Client-side",
+    "Use AI (experimental)": false,
+    "Pause on containers": true,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": true
+  },
+  "Radar": {
+    "Radius": 100.0,
+    "Rotate with player": true,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter hostile mobs": false,
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter bats": true,
+    "Filter slimes": false,
+    "Filter invisible": false
+  },
+  "Reach": {
+    "Range": 6.0
+  },
+  "RemoteView": {
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": true,
+    "Filter neutral mobs": true,
+    "Filter passive mobs": true,
+    "Filter passive water mobs": true,
+    "Filter babies": true,
+    "Filter bats": true,
+    "Filter slimes": true,
+    "Filter pets": true,
+    "Filter villagers": true,
+    "Filter zombie villagers": true,
+    "Filter golems": true,
+    "Filter piglins": true,
+    "Filter zombie piglins": true,
+    "Filter endermen": true,
+    "Filter shulkers": true,
+    "Filter allays": true,
+    "Filter invisible": false,
+    "Filter armor stands": true
+  },
+  "Restock": {
+    "Items": "default",
+    "Slot": 0.0,
+    "Minimum amount": 1.0,
+    "Tools repair mode": 0.0
+  },
+  "SafeWalk": {
+    "Sneak at edges": false,
+    "Sneak edge distance": 0.05
+  },
+  "Search": {
+    "Block": "minecraft:diamond_ore",
+    "Area": "11x11 chunks",
+    "Limit": 4.0
+  },
+  "Sneak": {
+    "Mode": "Legit",
+    "Turn off while flying": false
+  },
+  "SpeedNuker": {
+    "Range": 5.0,
+    "Shape": "Sphere",
+    "Flat mode": false,
+    "Mode": "Normal",
+    "ID": "minecraft:air",
+    "Lock ID": false,
+    "MultiID List": "default",
+    "Swing hand": "Off"
+  },
+  "Step": {
+    "Mode": "Legit",
+    "Height": 1.0
+  },
+  "Throw": {
+    "Amount": 16.0
+  },
+  "Tillaura": {
+    "Range": 5.0,
+    "MultiTill": false,
+    "Check line of sight": true
+  },
+  "Timer": {
+    "Speed": 2.0
+  },
+  "TP-Aura": {
+    "Range": 4.25,
+    "Speed": 0.0,
+    "Priority": "Angle",
+    "Swing hand": "Client-side",
+    "Pause on containers": true,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "Trajectories": {
+    "Miss Color": "#808080",
+    "Entity Hit Color": "#FF0000",
+    "Block Hit Color": "#00FF00"
+  },
+  "TreeBot": {
+    "Range": 4.5,
+    "Facing": "Server-side",
+    "Swing hand": "Server-side"
+  },
+  "TriggerBot": {
+    "Range": 4.25,
+    "Speed": 0.0,
+    "Speed randomization": 100.0,
+    "Swing hand": "Client-side",
+    "Attack while blocking": false,
+    "Simulate mouse click": false,
+    "Filter players": false,
+    "Filter sleeping": false,
+    "Filter flying": 0.0,
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter babies": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter invisible": false,
+    "Filter named": false,
+    "Filter shulker bullets": false,
+    "Filter armor stands": false,
+    "Filter end crystals": false
+  },
+  "TrollPotion": {
+    "Potion type": "Splash"
+  },
+  "TrueSight": {
+    "Filter hostile mobs": false,
+    "Filter neutral mobs": "Off",
+    "Filter passive mobs": false,
+    "Filter passive water mobs": false,
+    "Filter bats": false,
+    "Filter slimes": false,
+    "Filter pets": false,
+    "Filter villagers": false,
+    "Filter zombie villagers": false,
+    "Filter golems": false,
+    "Filter piglins": "Off",
+    "Filter zombie piglins": "Off",
+    "Filter endermen": "Off",
+    "Filter shulkers": false,
+    "Filter allays": false,
+    "Filter named": false,
+    "Filter armor stands": false
+  },
+  "Tunneller": {
+    "Tunnel size": "3x3",
+    "Limit": 0.0,
+    "Place torches": false
+  },
+  "VeinMiner": {
+    "Range": 5.0,
+    "Flat mode": false,
+    "MultiID List": "default",
+    "Swing hand": "Server-side",
+    "Max vein size": 64.0,
+    "Check line of sight": false
+  },
+  "X-Ray": {
+    "Ores": "default",
+    "Only show exposed": false,
+    "Opacity": 0.0
+  },
+  ".annoy": {
+    "RC mode": false
+  },
+  ".friends": {
+    "Middle click friends": true
+  },
+  ".path": {
+    "Debug mode": false,
+    "Depth test": false
+  },
+  ".tp": {
+    "Disable Freecam": true
+  },
+  "Disable Wurst": {
+    "Hide enable button": false
+  },
+  "HackList": {
+    "Mode": "Auto",
+    "Position": "Left",
+    "Color": "#FFFFFF",
+    "Sort by": "Name",
+    "Reverse sorting": false,
+    "Animations": true
+  },
+  "NoChatReports": {
+    "Disable signatures": true
+  },
+  "NoTelemetry": {
+    "Disable telemetry": true
+  },
+  "TabGUI": {
+    "Status": "Disabled"
+  },
+  "Translations": {
+    "Force English": true
+  },
+  "VanillaSpoof": {
+    "Spoof Vanilla": false
+  },
+  "WurstLogo": {
+    "Background": "#FFFFFF",
+    "Text": "#000000",
+    "Visibility": "Always"
+  },
+  "Zoom": {
+    "Zoom level": 3.0,
+    "Use mouse wheel": true,
+    "Zoom in screens": false,
+    "Keybind": "key.keyboard.v"
+  }
+}
