@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.ModContainerImpl;
+import net.fabricmc.loader.impl.launch.FabricLauncherBase;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +30,9 @@ import org.spongepowered.tools.agent.MixinAgent;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;
+import java.lang.instrument.UnmodifiableClassException;
 import java.lang.management.ManagementFactory;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -81,7 +84,7 @@ public class NewMixinUtils {
         }
     }
 
-    public static void addMixinsIntoMixinClassLoader(ModContainerImpl modContainer) throws NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException {
+    public static void addMixinsIntoMixinClassLoader(ModContainerImpl modContainer) throws NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException, UnmodifiableClassException {
         for (Class<?> registeredMixin : getRegisteredMixins(modContainer)) {
             log(registeredMixin.getName());
         }
@@ -108,6 +111,14 @@ public class NewMixinUtils {
                     if(getActiveExtensions() instanceof Extensions extensions){
                         log("Invoking MixinConfig::prepareMixins ...");
                         method.invoke(config,mixinConfig,mixinsWithoutPackage,plugin==null,extensions);
+                    }
+                }
+
+                for (List<Class<?>> value : targetClasses.values()) {
+                    for (Class<?> aClass : value) {
+                        log("Retransforming "+aClass);
+                        getInstrumentation().retransformClasses(aClass);
+                        getInstrumentation().redefineClasses(new ClassDefinition(aClass,FabricLauncherBase.getLauncher().getClassByteArray(aClass.getName(),true)));
                     }
                 }
             }
@@ -346,28 +357,10 @@ public class NewMixinUtils {
         return Optional.empty();
     }
 
-    private static Instrumentation getInst() throws NoSuchFieldException, IllegalAccessException {
+    private static Instrumentation getInstrumentation() throws NoSuchFieldException, IllegalAccessException{
         Field field = MixinAgent.class.getDeclaredField("instrumentation");
         field.setAccessible(true);
         return (Instrumentation) field.get(null);
-    }
-
-    private static Instrumentation getInstrumentation() throws Exception {
-        if (getInst() != null) {
-            return getInst();
-        }
-
-        Class<?> virtualMachine = Class.forName("com.sun.tools.attach.VirtualMachine");
-        Method attachMethod = virtualMachine.getMethod("attach", String.class);
-        Method loadAgentMethod = virtualMachine.getMethod("loadAgent", String.class);
-        Method detachMethod = virtualMachine.getMethod("detach");
-
-        String pid = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
-        Object vm = attachMethod.invoke(null, pid);
-        loadAgentMethod.invoke(vm, "mixin-agent.jar");
-        detachMethod.invoke(vm);
-
-        return getInst();
     }
 
     private static void log(String s){

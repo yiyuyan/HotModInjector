@@ -44,6 +44,7 @@ import org.spongepowered.asm.service.MixinService;
 import org.spongepowered.tools.agent.MixinAgent;
 
 import java.io.*;
+import java.lang.instrument.UnmodifiableClassException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -71,7 +72,7 @@ public class ModInjector {
         addVersion("0.12.0-", FabricUtil.COMPATIBILITY_0_10_0);
     }
 
-    public static void install(File file,boolean child,boolean runInThread,boolean invokeMain) throws NoSuchMethodException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, NoSuchFieldException {
+    public static void install(File file,boolean child,boolean runInThread,boolean invokeMain) throws NoSuchMethodException, ClassNotFoundException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, NoSuchFieldException, UnmodifiableClassException {
         if(file==null){
             throw new RuntimeException("The file can not is null");
         }

@@ -1,6 +1,5 @@
 package cn.ksmcbrigade.hmj;
 
-import cn.ksmcbrigade.hmj.transformers.HotMixinTransformer;
 import cn.ksmcbrigade.hmj.transformers.MixinServiceKnotTransformer;
 import cn.ksmcbrigade.hmj.transformers.NPOPTransformer;
 import cn.ksmcbrigade.hmj.utils.UnsafeUtils;
@@ -9,7 +8,6 @@ import org.spongepowered.asm.mixin.MixinEnvironment;
 import org.spongepowered.asm.mixin.transformer.IMixinTransformer;
 import org.spongepowered.tools.agent.MixinAgent;
 
-import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
@@ -25,13 +23,12 @@ public class HotMixinAgent {
 
     private static Instrumentation inst;
 
-    public static void premain(String arg, Instrumentation instrumentation) throws IOException, NoSuchFieldException, UnmodifiableClassException {
+    public static void premain(String arg, Instrumentation instrumentation) throws NoSuchFieldException, UnmodifiableClassException {
         System.out.println("[HotMixinAgent premain] MixinAgent Loading...");
         inst = instrumentation;
 
         instrumentation.addTransformer(new MixinServiceKnotTransformer(),true);
         instrumentation.retransformClasses(MixinServiceKnot.class);
-        //instrumentation.addTransformer(new HotMixinTransformer(),true);
         instrumentation.addTransformer(new NPOPTransformer(),true);
 
         System.out.println(UnsafeUtils.getFieldValue(MixinAgent.class,"instrumentation", Instrumentation.class));
@@ -112,7 +109,7 @@ public class HotMixinAgent {
      * @param arg Ignored
      * @param instrumentation Instance to use to re-define the mixins
      */
-    public static void agentmain(String arg, Instrumentation instrumentation) throws IOException, NoSuchFieldException, UnmodifiableClassException {
+    public static void agentmain(String arg, Instrumentation instrumentation) throws NoSuchFieldException, UnmodifiableClassException {
         System.out.println("[HotMixinAgent main] MixinAgent Loading...");
         premain(arg,instrumentation);
     }

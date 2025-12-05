@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.io.IOException;
+import java.lang.instrument.UnmodifiableClassException;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Path;
 import java.util.Iterator;
@@ -24,7 +25,7 @@ public class HotInstallMod {
         try {
             ModInjector.install(modsDirectory.resolve(path.getFileName()).toFile(),false,false,true);
         } catch (NoSuchFieldException | NoSuchMethodException | ClassNotFoundException | InvocationTargetException | InstantiationException |
-                 IllegalAccessException | IOException e) {
+                 IllegalAccessException | IOException | UnmodifiableClassException e) {
             e.printStackTrace();
             SystemToast.add(MinecraftClient.getInstance().getToastManager(), SystemToast.Type.TUTORIAL_HINT, Text.of("Failed to install the mod to the game."),Text.of(e.getMessage()));
         }
