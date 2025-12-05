@@ -154,6 +154,11 @@ public class NewMixinUtils {
         log("[redefineTargetClass] Redefining "+targetClass);
         TargetClassTransformer targetClassTransformer = new TargetClassTransformer(targetClass.getName(),transformer.transformClassBytes(targetClass.getName(),targetClass.getName(),FabricLauncherBase.getLauncher().getClassByteArray(targetClass.getName(),false)));
         getInstrumentation().addTransformer(targetClassTransformer);
+        try {
+            getInstrumentation().redefineClasses(new ClassDefinition(targetClass,targetClassTransformer.transformedBytes()));
+        } catch (ClassNotFoundException | UnmodifiableClassException | NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
         Timer timer = new Timer();
        timer.schedule(new TimerTask() {
             @Override
@@ -167,7 +172,6 @@ public class NewMixinUtils {
             }
         },5);
 
-        //getInstrumentation().redefineClasses(new ClassDefinition(targetClass,));
     }
 
     private static void logMixinsForTargetClass(Class<?> aClass) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
