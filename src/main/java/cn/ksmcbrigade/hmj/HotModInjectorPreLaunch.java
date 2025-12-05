@@ -1,12 +1,9 @@
 package cn.ksmcbrigade.hmj;
 
-import cn.ksmcbrigade.hmj.tcp.TcpClient;
 import cn.ksmcbrigade.hmj.utils.MixinUtils;
-import cn.ksmcbrigade.hmj.utils.NewMixinUtils;
 import cn.ksmcbrigade.hmj.utils.UnsafeUtils;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
-import net.fabricmc.loader.impl.ModContainerImpl;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.spongepowered.asm.logging.Level;
@@ -23,7 +20,6 @@ import java.util.List;
 public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
 
     public static List<MixinAgent> agents = new ArrayList<>();
-    public static final TcpClient TCP_CLIENT = new TcpClient("127.0.0.1",65534);
     public static boolean serverConnected;
 
     @Override
@@ -44,8 +40,6 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
                 //UnsafeUtils.loadAgent(new File("mixin-agent.jar").getAbsoluteFile().getPath());
                 if(!FabricLoader.getInstance().isDevelopmentEnvironment()){
                     UnsafeUtils.loadAgent(UnsafeUtils.getJarPath(HotModInjectorPreLaunch.class));
-                    serverConnected = TCP_CLIENT.testConnection();
-                    System.out.println("Tcp server connected: "+serverConnected);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -101,6 +95,6 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
     }
 
     public static boolean isMixinReloadSupport(){
-        return FabricLoader.getInstance().isDevelopmentEnvironment() || serverConnected;
+        return !agents.isEmpty();
     }
 }

@@ -1,10 +1,8 @@
 package cn.ksmcbrigade.hmj;
 
-import cn.ksmcbrigade.hmj.tcp.TcpServer;
 import cn.ksmcbrigade.hmj.transformers.HotMixinTransformer;
 import cn.ksmcbrigade.hmj.transformers.NPOPTransformer;
 import cn.ksmcbrigade.hmj.utils.UnsafeUtils;
-import org.apache.commons.lang3.ArrayUtils;
 import org.spongepowered.asm.mixin.MixinEnvironment;
 import org.spongepowered.asm.mixin.transformer.IMixinTransformer;
 import org.spongepowered.tools.agent.MixinAgent;
@@ -13,10 +11,8 @@ import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * &#064;Author: KSmc_brigade
@@ -29,9 +25,6 @@ public class HotMixinAgent {
     public static void premain(String arg, Instrumentation instrumentation) throws IOException, NoSuchFieldException {
         System.out.println("[HotMixinAgent premain] MixinAgent Loading...");
         inst = instrumentation;
-
-        TcpServer server = new TcpServer(65534);
-        server.start();
 
         instrumentation.addTransformer(new HotMixinTransformer(),true);
         instrumentation.addTransformer(new NPOPTransformer(),true);
