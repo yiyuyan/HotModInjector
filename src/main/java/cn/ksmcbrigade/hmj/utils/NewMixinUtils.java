@@ -2,6 +2,7 @@ package cn.ksmcbrigade.hmj.utils;
 
 import cn.ksmcbrigade.hmj.HotModInjectorPreLaunch;
 import cn.ksmcbrigade.hmj.transformers.ClassByteGetter;
+import cn.ksmcbrigade.hmj.transformers.TargetClassTransformer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -151,7 +152,22 @@ public class NewMixinUtils {
     private static void redefineTargetClass(Class<?> targetClass) throws NoSuchFieldException, IllegalAccessException, IOException, UnmodifiableClassException, ClassNotFoundException {
         IMixinTransformer transformer = UnsafeUtils.getFieldValue(HotModInjectorPreLaunch.agents.get(0),"classTransformer",IMixinTransformer.class);
         log("[redefineTargetClass] Redefining "+targetClass);
-        getInstrumentation().redefineClasses(new ClassDefinition(targetClass,transformer.transformClassBytes(targetClass.getName(),targetClass.getName(),FabricLauncherBase.getLauncher().getClassByteArray(targetClass.getName(),false))));
+        TargetClassTransformer targetClassTransformer = new TargetClassTransformer(targetClass.getName(),transformer.transformClassBytes(targetClass.getName(),targetClass.getName(),FabricLauncherBase.getLauncher().getClassByteArray(targetClass.getName(),false)));
+        getInstrumentation().addTransformer(targetClassTransformer);
+        Timer timer = new Timer();
+       timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                try {
+                    getInstrumentation().removeTransformer(targetClassTransformer);
+                } catch (Throwable e) {
+                    e.printStackTrace();
+                }
+                timer.cancel();
+            }
+        },5);
+
+        //getInstrumentation().redefineClasses(new ClassDefinition(targetClass,));
     }
 
     private static void logMixinsForTargetClass(Class<?> aClass) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
@@ -164,10 +180,7 @@ public class NewMixinUtils {
                     Method mixinsForM = config.getClass().getDeclaredMethod("mixinsFor",String.class);
                     mixinsForM.setAccessible(true);
                     List<Object> mixins = (List<Object>) mixinsForM.invoke(config,aClass.getName());
-                    if(mixins.isEmpty()){
-                        log("WARN logMixinsForTargetClass:Can't find mixin classes for the target class: "+aClass);
-                    }
-                    else{
+                    if(!mixins.isEmpty()){
                         log("logMixinsForTargetClass: "+Arrays.toString(mixins.toArray()));
                     }
                 }
