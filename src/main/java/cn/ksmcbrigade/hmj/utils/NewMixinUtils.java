@@ -105,16 +105,16 @@ public class NewMixinUtils {
                 }
 
                 if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinConfig").isAssignableFrom(config.getClass())){
-                    //ArrayList<String> mixinsWithoutPackage = new ArrayList<>();
-                    //mixinClasses.forEach((a)-> mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),!config.getMixinPackage().endsWith(".")?".":"")));
-                    Method method = config.getClass().getDeclaredMethod("postInitialise", Extensions.class);
+                    ArrayList<String> mixinsWithoutPackage = new ArrayList<>();
+                    mixinClasses.forEach((a)-> mixinsWithoutPackage.add(a.getName().replace(config.getMixinPackage(),!config.getMixinPackage().endsWith(".")?".":"")));
+                    Method method = config.getClass().getDeclaredMethod("prepareMixins",String.class,List.class,boolean.class, Extensions.class);
                     method.setAccessible(true);
 
-                    //IMixinConfigPlugin plugin = getMixinConfigPlugin(config);
+                    IMixinConfigPlugin plugin = getMixinConfigPlugin(config);
 
                     if(getActiveExtensions() instanceof Extensions extensions){
-                        log("Invoking MixinConfig::postInitialise ...");
-                        method.invoke(config,extensions);
+                        log("Invoking MixinConfig::prepareMixins ...");
+                        method.invoke(config,mixinConfig,mixinsWithoutPackage,plugin==null,extensions);
                     }
                     addIntoMixinProcessor(config);
                 }
@@ -122,19 +122,7 @@ public class NewMixinUtils {
                 for (List<Class<?>> value : targetClasses.values()) {
                     for (Class<?> aClass : value) {
                         logMixinsForTargetClass(aClass);
-                        log("Retransforming "+aClass);
-                        getInstrumentation().retransformClasses(aClass);
-                        byte[] bytes = FabricLauncherBase.getLauncher().getClassByteArray(aClass.getName(),true);
-                        ClassNode node = new ClassNode();
-                        ClassReader reader = new ClassReader(bytes);
-                        reader.accept(node,ClassReader.EXPAND_FRAMES);
-                        node.methods.forEach((m)->{
-                            if(m.name.equals(node.name) || m.name.equals("method_25426")){
-                                for (AbstractInsnNode instruction : m.instructions) {
-                                    if(instruction instanceof LdcInsnNode ldcInsnNode) System.out.println(ldcInsnNode.cst);
-                                }
-                            }
-                        });
+                        redefineTargetClass(aClass);
                     }
                 }
             }
@@ -152,26 +140,35 @@ public class NewMixinUtils {
             Object processor = UnsafeUtils.getFieldValue(transformer,"processor",Object.class);
             List<Object> configs = UnsafeUtils.getFieldValue(processor,"configs",List.class);
             if (configs != null) {
-                log("Adding "+mixinConfig + " into the mixin processor...");
+                log("Adding "+mixinConfig);
                 configs.add(mixinConfig);
             }
             UnsafeUtils.setFieldValue(processor,"pendingConfigs",configs);
-            UnsafeUtils.setFieldValue(processor,"mixins",configs);
+            UnsafeUtils.setFieldValue(processor,"configs",configs);
         }
     }
 
-    private static void logMixinsForTargetClass(Class<?> aClass) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException {
+    private static void redefineTargetClass(Class<?> targetClass) throws NoSuchFieldException, IllegalAccessException, IOException, UnmodifiableClassException, ClassNotFoundException {
+        IMixinTransformer transformer = UnsafeUtils.getFieldValue(HotModInjectorPreLaunch.agents.get(0),"classTransformer",IMixinTransformer.class);
+        log("[redefineTargetClass] Redefining "+targetClass);
+        getInstrumentation().redefineClasses(new ClassDefinition(targetClass,transformer.transformClassBytes(targetClass.getName(),targetClass.getName(),FabricLauncherBase.getLauncher().getClassByteArray(targetClass.getName(),false))));
+    }
+
+    private static void logMixinsForTargetClass(Class<?> aClass) throws ClassNotFoundException, InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         IMixinTransformer transformer = UnsafeUtils.getFieldValue(HotModInjectorPreLaunch.agents.get(0),"classTransformer",IMixinTransformer.class);
         if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinTransformer").isAssignableFrom(transformer.getClass())){
             Object processor = UnsafeUtils.getFieldValue(transformer,"processor",Object.class);
             List<Object> configs = UnsafeUtils.getFieldValue(processor,"configs",List.class);
             if (configs != null) {
                 for (Object config : configs) {
-                    if(config instanceof IMixinConfig iMixinConfig){
-                        System.out.println(iMixinConfig.getMixinPackage());
-                        for (String target : iMixinConfig.getTargets()) {
-                            System.out.println(target);
-                        }
+                    Method mixinsForM = config.getClass().getDeclaredMethod("mixinsFor",String.class);
+                    mixinsForM.setAccessible(true);
+                    List<Object> mixins = (List<Object>) mixinsForM.invoke(config,aClass.getName());
+                    if(mixins.isEmpty()){
+                        log("WARN logMixinsForTargetClass:Can't find mixin classes for the target class: "+aClass);
+                    }
+                    else{
+                        log("logMixinsForTargetClass: "+Arrays.toString(mixins.toArray()));
                     }
                 }
             }
