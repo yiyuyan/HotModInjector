@@ -54,6 +54,11 @@ public class NewMixinUtils {
         if(FabricLoader.getInstance().isDevelopmentEnvironment() && getInstrumentation()!=null){
             getInstrumentation().addTransformer(new MixinServiceKnotTransformer(),true);
             getInstrumentation().retransformClasses(MixinServiceKnot.class);
+        }
+    }
+
+    public static void initNPOPTransformer() throws NoSuchFieldException, IllegalAccessException {
+        if(getInstrumentation()!=null){
             getInstrumentation().addTransformer(new NPOPTransformer(),true);
         }
     }
@@ -75,9 +80,19 @@ public class NewMixinUtils {
         Class<?> mixinConfigDecorator = Class.forName("net.fabricmc.loader.impl.launch.FabricMixinBootstrap$MixinConfigDecorator");
 
         log("Apply mixin configs...");
-        Method applyM = mixinConfigDecorator.getDeclaredMethod("apply",Map.class);
-        applyM.setAccessible(true);
-        applyM.invoke(null,configToModMap);
+        log("Invoking FabricMixinBootstrap$MixinConfigDecorator::apply ...");
+        try {
+            Method applyM = mixinConfigDecorator.getDeclaredMethod("apply",Map.class);
+            applyM.setAccessible(true);
+            applyM.invoke(null,configToModMap);
+        } catch (NoSuchMethodException | SecurityException | IllegalAccessException |
+                 InvocationTargetException e) {
+            log("ERROR: Can't apply mixin decorates: "+e.getMessage());
+            throw new RuntimeException(e);
+        }
+        catch (IllegalArgumentException argumentException){
+            log("WARN: Can't apply mixin decorates,maybe the mixin has already been decorated.: "+argumentException.getMessage());
+        }
     }
 
     public static void selectMixinConfigs(ModContainerImpl modContainer) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -108,7 +123,7 @@ public class NewMixinUtils {
                 Map<Class<?>,List<Class<?>>> targetClasses = new HashMap<>();
                 for (Class<?> mixinClass : mixinClasses) {
                     targetClasses.put(mixinClass,getTargetClasses(mixinClass));
-                    log("Got mixin and targets: "+ mixinClass +" : "+Arrays.toString(targetClasses.get(mixinClass).toArray()));
+                    //log("Got mixin and targets: "+ mixinClass +" : "+Arrays.toString(targetClasses.get(mixinClass).toArray()));
                 }
 
                 if(Class.forName("org.spongepowered.asm.mixin.transformer.MixinConfig").isAssignableFrom(config.getClass())){
@@ -128,7 +143,6 @@ public class NewMixinUtils {
 
                 for (List<Class<?>> value : targetClasses.values()) {
                     for (Class<?> aClass : value) {
-                        logMixinsForTargetClass(aClass);
                         redefineTargetClass(aClass);
                     }
                 }
@@ -162,7 +176,7 @@ public class NewMixinUtils {
         getInstrumentation().addTransformer(targetClassTransformer);
         try {
             getInstrumentation().redefineClasses(new ClassDefinition(targetClass,targetClassTransformer.transformedBytes()));
-        } catch (ClassNotFoundException | UnmodifiableClassException | NoSuchFieldException | IllegalAccessException e) {
+        } catch (ClassNotFoundException | UnmodifiableClassException | NoSuchFieldException | IllegalAccessException | UnsupportedOperationException e) {
             e.printStackTrace();
         }
         Timer timer = new Timer();
@@ -282,6 +296,7 @@ public class NewMixinUtils {
             }
             catch (Throwable e){
                 log("ERROR: Can't get the target class for the mixin class "+mixinClass + " : "+string);
+                e.printStackTrace();
             }
         }
         return classes;
@@ -299,7 +314,7 @@ public class NewMixinUtils {
             if (classNode.invisibleAnnotations != null) {
                 for (AnnotationNode annotation : classNode.invisibleAnnotations) {
                     if (annotation.desc.equals("Lorg/spongepowered/asm/mixin/Mixin;")) {
-                        log("Found @Mixin annotation in bytecode");
+                        //log("Found @Mixin annotation in bytecode");
                         // 解析注解值
                         if (annotation.values != null) {
                             for (int i = 0; i < annotation.values.size(); i += 2) {

@@ -39,7 +39,12 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
             try {
                 //UnsafeUtils.loadAgent(new File("mixin-agent.jar").getAbsoluteFile().getPath());
                 if(!FabricLoader.getInstance().isDevelopmentEnvironment()){
-                    UnsafeUtils.loadAgent(UnsafeUtils.getJarPath(HotModInjectorPreLaunch.class));
+                    if(!HotMixinAgent.file.exists()){
+                        UnsafeUtils.loadAgent(UnsafeUtils.getJarPath(HotModInjectorPreLaunch.class));
+                        while (!HotMixinAgent.file.exists()){
+                            Thread.yield();
+                        }
+                    }
                 }
                 else{
                     NewMixinUtils.initDevelopmentAgent();
@@ -47,6 +52,7 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            HotMixinAgent.file.delete();
             Field field = MixinAgent.class.getDeclaredField("agents");
             field.setAccessible(true);
             agents = (List<MixinAgent>) field.get(null);

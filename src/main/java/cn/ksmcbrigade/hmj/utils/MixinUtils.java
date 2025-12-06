@@ -181,7 +181,6 @@ public class MixinUtils {
                         } catch (UnmodifiableClassException e) {
                             e.printStackTrace();
                         }
-                        //.redefineClasses(new ClassDefinition(clazz,));
                     }
                 }
             }

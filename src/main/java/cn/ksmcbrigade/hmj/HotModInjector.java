@@ -20,6 +20,11 @@ import java.io.File;
 public class HotModInjector implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        try {
+            NewMixinUtils.initNPOPTransformer();
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            System.out.println("Can't load the NPOP Transformer: "+e.getMessage());
+        }
         NewMixinUtils.infoMod((ModContainerImpl) FabricLoader.getInstance().getModContainer("hmj").get());
         IClassTracker tracker = MixinService.getService().getClassTracker();
         System.out.println(tracker.getClass().getName());
