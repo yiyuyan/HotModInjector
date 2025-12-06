@@ -1,6 +1,7 @@
 package cn.ksmcbrigade.hmj;
 
 import cn.ksmcbrigade.hmj.utils.MixinUtils;
+import cn.ksmcbrigade.hmj.utils.NewMixinUtils;
 import cn.ksmcbrigade.hmj.utils.UnsafeUtils;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
@@ -20,7 +21,6 @@ import java.util.List;
 public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
 
     public static List<MixinAgent> agents = new ArrayList<>();
-    public static boolean serverConnected;
 
     @Override
     public void onPreLaunch() {
@@ -41,6 +41,9 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
                 if(!FabricLoader.getInstance().isDevelopmentEnvironment()){
                     UnsafeUtils.loadAgent(UnsafeUtils.getJarPath(HotModInjectorPreLaunch.class));
                 }
+                else{
+                    NewMixinUtils.initDevelopmentAgent();
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -57,19 +60,13 @@ public class HotModInjectorPreLaunch implements PreLaunchEntrypoint {
                 System.out.println("MixinVersion: "+environment.getVersion());
                 System.out.println("MixinSide: "+environment.getSide().name());
                 System.out.println("MixinTransformerClass: "+transformer.getClass().getName());
-
-
-
-                System.out.println("MixinTransformers: ");
-                for (ITransformer environmentTransformer : environment.getTransformers()) {
-                    System.out.println(environmentTransformer+"    ---   "+environmentTransformer.getName() + "    ---   "+environmentTransformer.getClass().getName());
-                }
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
             try {
-                MixinUtils.logMixinAgentTransformers();
+                System.out.println("AgentTransformers: ");
+                NewMixinUtils.logMixinAgentTransformers();
             } catch (Exception e) {
                 e.printStackTrace();
             }

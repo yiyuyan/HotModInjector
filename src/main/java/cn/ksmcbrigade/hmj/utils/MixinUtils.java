@@ -167,27 +167,6 @@ public class MixinUtils {
         }
     }
 
-    public static void logMixinAgentTransformers(){
-        try {
-            Instrumentation instrumentation = MixinUtils.getInst();
-            Object transformerManager = UnsafeUtils.getFieldValue(instrumentation,"mRetransfomableTransformerManager", Object.class);
-            Object[] transformerInfos = UnsafeUtils.getFieldValue(transformerManager,"mTransformerList",Object[].class);
-            if (transformerInfos != null) {
-                for (Object transformerInfo : transformerInfos) {
-                    ClassFileTransformer transformer1 = UnsafeUtils.getFieldValue(transformerInfo,"mTransformer",ClassFileTransformer.class);
-                    if (transformer1 != null) {
-                        System.out.println(transformer1.getClass().getName());
-                    }
-                }
-            }
-            else{
-                System.out.println("The transformer infos is null.");
-            }
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-           e.printStackTrace();
-        }
-    }
-
     public static void reApplyByAgent(Class<?> clazz){
         try {
             Instrumentation instrumentation = MixinUtils.getInst();

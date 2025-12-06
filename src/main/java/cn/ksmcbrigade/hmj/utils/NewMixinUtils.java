@@ -2,31 +2,29 @@ package cn.ksmcbrigade.hmj.utils;
 
 import cn.ksmcbrigade.hmj.HotModInjectorPreLaunch;
 import cn.ksmcbrigade.hmj.transformers.ClassByteGetter;
+import cn.ksmcbrigade.hmj.transformers.MixinServiceKnotTransformer;
+import cn.ksmcbrigade.hmj.transformers.NPOPTransformer;
 import cn.ksmcbrigade.hmj.transformers.TargetClassTransformer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.llamalad7.mixinextras.transformer.MixinTransformer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.impl.ModContainerImpl;
 import net.fabricmc.loader.impl.launch.FabricLauncherBase;
-import net.fabricmc.loader.impl.transformer.FabricTransformer;
+import net.fabricmc.loader.impl.launch.knot.MixinServiceKnot;
 import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.AnnotationNode;
 import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.LdcInsnNode;
 import org.spongepowered.asm.mixin.Mixins;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfig;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.transformer.Config;
 import org.spongepowered.asm.mixin.transformer.IMixinTransformer;
 import org.spongepowered.asm.mixin.transformer.ext.Extensions;
-import org.spongepowered.asm.mixin.transformer.ext.IExtension;
 import org.spongepowered.asm.mixin.transformer.ext.IExtensionRegistry;
 import org.spongepowered.asm.service.IMixinService;
 import org.spongepowered.asm.service.MixinService;
@@ -36,9 +34,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.instrument.ClassDefinition;
+import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
-import java.lang.management.ManagementFactory;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -51,6 +49,14 @@ import java.util.jar.JarFile;
  * &#064;Date: 2025/12/3
  */
 public class NewMixinUtils {
+
+    public static void initDevelopmentAgent() throws NoSuchFieldException, IllegalAccessException, UnmodifiableClassException {
+        if(FabricLoader.getInstance().isDevelopmentEnvironment() && getInstrumentation()!=null){
+            getInstrumentation().addTransformer(new MixinServiceKnotTransformer(),true);
+            getInstrumentation().retransformClasses(MixinServiceKnot.class);
+            getInstrumentation().addTransformer(new NPOPTransformer(),true);
+        }
+    }
 
     public static void addIntoMixinConfig(ModContainerImpl modContainer) throws NoSuchMethodException, ClassNotFoundException, InvocationTargetException, IllegalAccessException {
         Map<String, ModContainerImpl> configToModMap = new HashMap<>();
@@ -89,7 +95,7 @@ public class NewMixinUtils {
         }
     }
 
-    public static void addMixinsIntoMixinClassLoader(ModContainerImpl modContainer) throws NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException, UnmodifiableClassException {
+    public static void initAndInjectMixins(ModContainerImpl modContainer) throws NoSuchFieldException, IllegalAccessException, IOException, InvocationTargetException, NoSuchMethodException, ClassNotFoundException, UnmodifiableClassException {
         for (Class<?> registeredMixin : getRegisteredMixins(modContainer)) {
             log(registeredMixin.getName());
         }
@@ -189,6 +195,23 @@ public class NewMixinUtils {
                     }
                 }
             }
+        }
+    }
+
+    public static void logMixinAgentTransformers() throws NoSuchFieldException, IllegalAccessException {
+        Instrumentation instrumentation = getInstrumentation();
+        Object transformerManager = UnsafeUtils.getFieldValue(instrumentation,"mRetransfomableTransformerManager", Object.class);
+        Object[] transformerInfos = UnsafeUtils.getFieldValue(transformerManager,"mTransformerList",Object[].class);
+        if (transformerInfos != null) {
+            for (Object transformerInfo : transformerInfos) {
+                ClassFileTransformer transformer1 = UnsafeUtils.getFieldValue(transformerInfo,"mTransformer",ClassFileTransformer.class);
+                if (transformer1 != null) {
+                    log(transformer1.getClass().getName());
+                }
+            }
+        }
+        else{
+            log("The transformer infos is null.");
         }
     }
 

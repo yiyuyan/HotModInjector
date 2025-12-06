@@ -1,5 +1,5 @@
-[19:35:49] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.4
-[19:35:49] [main/INFO] (FabricLoader) Loading 60 mods:
+[09:37:15] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.4
+[09:37:16] [main/INFO] (FabricLoader) Loading 60 mods:
 	- fabric-api 0.92.2+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
 	- fabric-api-lookup-api-v1 1.6.36+1802ada577
@@ -60,68 +60,179 @@
 	- minecraft 1.20.1
 	- mixinextras 0.4.1
 	- modmenu 7.2.2
-[19:35:49] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/F:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.3+mixin.0.8.7/51ee0a44ab05f6fddd66b09e66b3a16904f9c55d/sponge-mixin-0.15.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[19:35:49] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
-[19:35:50] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[19:35:50] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[19:35:50] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[19:35:51] [main/WARN] (FabricLoader/Mixin) MixinEnvironment::getTransformers is deprecated!
-[19:35:51] [main/INFO] (FabricLoader/Mixin/agent) !!!!!!!!!!
-[19:35:51] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[19:35:51] [main/ERROR] (FabricLoader) Minecraft has crashed!
-net.fabricmc.loader.impl.FormattedException: java.lang.RuntimeException: Mixin transformation of net.minecraft.util.SystemDetails failed
-	at net.fabricmc.loader.impl.FormattedException.ofLocalized(FormattedException.java:63) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:482) ~[fabric-loader-0.16.4.jar:?]
+[09:37:16] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/F:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.3+mixin.0.8.7/51ee0a44ab05f6fddd66b09e66b3a16904f9c55d/sponge-mixin-0.15.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[09:37:16] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
+[09:37:16] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[09:37:16] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[09:37:16] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[09:37:17] [main/INFO] (FabricLoader/Mixin/agent) Redefining class net/fabricmc/loader/impl/launch/knot/MixinServiceKnot
+[09:37:17] [main/INFO] (FabricLoader/Mixin/agent) !!!!!!!!!!
+[09:37:18] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[09:37:18] [main/WARN] (Minecraft) Failed retrieving info for group processor
+java.lang.ExceptionInInitializerError: null
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:375) ~[?:?]
+	at jdk.proxy2.$Proxy29.<clinit>(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:?]
+	at java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499) ~[?:?]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:480) ~[?:?]
+	at java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1053) ~[?:?]
+	at java.lang.reflect.Proxy.newProxyInstance(Proxy.java:1039) ~[?:?]
+	at com.sun.jna.Native.load(Native.java:624) ~[jna-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.OleAuto.<clinit>(OleAuto.java:63) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.Wbemcli$IWbemLocator.ConnectServer(Wbemcli.java:220) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil.connectServer(WbemcliUtil.java:532) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil$WmiQuery.execute(WbemcliUtil.java:184) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:156) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:127) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.driver.windows.wmi.Win32Processor.queryProcessorId(Win32Processor.java:94) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.driver.windows.LogicalProcessorInformation.getLogicalProcessorInformationEx(LogicalProcessorInformation.java:118) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsCentralProcessor.initProcessorCounts(WindowsCentralProcessor.java:187) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.common.AbstractCentralProcessor.<init>(AbstractCentralProcessor.java:83) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsCentralProcessor.<init>(WindowsCentralProcessor.java:72) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsHardwareAbstractionLayer.createProcessor(WindowsHardwareAbstractionLayer.java:61) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.util.Memoizer$1.get(Memoizer.java:87) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.common.AbstractHardwareAbstractionLayer.getProcessor(AbstractHardwareAbstractionLayer.java:68) ~[oshi-core-6.2.2.jar:6.2.2]
+	at net.minecraft.util.SystemDetails.method_37146(SystemDetails.java:75) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.addHardwareGroup(SystemDetails.java:75) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.method_37143(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.<init>(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:34) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.crash.CrashReport.initCrashReport(CrashReport.java:274) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:164) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.4.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.4.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.4.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-Caused by: java.lang.RuntimeException: Mixin transformation of net.minecraft.util.SystemDetails failed
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:427) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.4.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
+Caused by: java.lang.IllegalArgumentException: Invalid Structure field in class com.sun.jna.platform.win32.Variant$VARIANT, field name 'activeField' (class com.sun.jna.Structure$StructField): The type "com.sun.jna.Structure$StructField" is not supported: Native size for type "com.sun.jna.Structure$StructField" is unknown
+	at com.sun.jna.Structure.validateField(Structure.java:1246) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.validateFields(Structure.java:1255) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:211) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:204) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:191) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:183) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Union.<init>(Union.java:46) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.platform.win32.Variant$VARIANT.<init>(Variant.java:172) ~[jna-platform-5.12.1.jar:?]
+	at com.sun.jna.platform.win32.Variant$VARIANT.<clinit>(Variant.java:164) ~[jna-platform-5.12.1.jar:?]
+	... 38 more
+Caused by: java.lang.IllegalArgumentException: The type "com.sun.jna.Structure$StructField" is not supported: Native size for type "com.sun.jna.Structure$StructField" is unknown
+	at com.sun.jna.Native.getNativeSize(Native.java:1412) ~[jna-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.Structure.getNativeSize(Structure.java:2310) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.getNativeSize(Structure.java:2300) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.validateField(Structure.java:1242) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.validateFields(Structure.java:1255) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:211) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:204) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:191) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Structure.<init>(Structure.java:183) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.Union.<init>(Union.java:46) ~[jna-5.12.1.jar:?]
+	at com.sun.jna.platform.win32.Variant$VARIANT.<init>(Variant.java:172) ~[jna-platform-5.12.1.jar:?]
+	at com.sun.jna.platform.win32.Variant$VARIANT.<clinit>(Variant.java:164) ~[jna-platform-5.12.1.jar:?]
+	... 38 more
+[09:37:18] [main/WARN] (Minecraft) Failed retrieving info for group graphics
+java.lang.NoClassDefFoundError: Could not initialize class com.sun.jna.platform.win32.OleAuto
+	at com.sun.jna.platform.win32.COM.Wbemcli$IWbemLocator.ConnectServer(Wbemcli.java:220) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil.connectServer(WbemcliUtil.java:532) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil$WmiQuery.execute(WbemcliUtil.java:184) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:156) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:127) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.driver.windows.wmi.Win32VideoController.queryVideoController(Win32VideoController.java:60) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsGraphicsCard.getGraphicsCards(WindowsGraphicsCard.java:80) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsHardwareAbstractionLayer.getGraphicsCards(WindowsHardwareAbstractionLayer.java:106) ~[oshi-core-6.2.2.jar:6.2.2]
+	at net.minecraft.util.SystemDetails.method_37140(SystemDetails.java:76) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.addHardwareGroup(SystemDetails.java:76) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.method_37143(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.<init>(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:34) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.util.crash.CrashReport.initCrashReport(CrashReport.java:274) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.client.main.Main.main(Main.java:164) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.4.jar:?]
-	... 3 more
-Caused by: org.spongepowered.asm.mixin.transformer.throwables.MixinTransformerError: An unexpected critical error was encountered
-	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:392) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.4.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+[09:37:18] [main/WARN] (Minecraft) Failed retrieving info for group physical memory
+java.lang.NoClassDefFoundError: Could not initialize class com.sun.jna.platform.win32.OleAuto
+	at com.sun.jna.platform.win32.COM.Wbemcli$IWbemLocator.ConnectServer(Wbemcli.java:220) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil.connectServer(WbemcliUtil.java:532) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at com.sun.jna.platform.win32.COM.WbemcliUtil$WmiQuery.execute(WbemcliUtil.java:184) ~[jna-platform-5.12.1.jar:5.12.1 (b0)]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:156) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.util.platform.windows.WmiQueryHandler.queryWMI(WmiQueryHandler.java:127) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.driver.windows.wmi.Win32PhysicalMemory.queryphysicalMemory(Win32PhysicalMemory.java:67) ~[oshi-core-6.2.2.jar:6.2.2]
+	at oshi.hardware.platform.windows.WindowsGlobalMemory.getPhysicalMemory(WindowsGlobalMemory.java:95) ~[oshi-core-6.2.2.jar:6.2.2]
+	at net.minecraft.util.SystemDetails.method_37145(SystemDetails.java:106) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.addGlobalMemoryGroup(SystemDetails.java:106) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.method_37133(SystemDetails.java:77) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.addHardwareGroup(SystemDetails.java:77) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.method_37143(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.tryAddGroup(SystemDetails.java:82) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.util.SystemDetails.<init>(SystemDetails.java:52) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:34) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.util.crash.CrashReport.initCrashReport(CrashReport.java:274) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.client.main.Main.main(Main.java:164) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.4.jar:?]
-	... 3 more
-Caused by: java.lang.IllegalArgumentException: object is not an instance of declaring class
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at com.llamalad7.mixinextras.utils.InternalMethod.lambda$of$0(InternalMethod.java:28) ~[mixinextras-fabric-0.4.1.jar:?]
-	at com.llamalad7.mixinextras.utils.MixinInternals.getClassNode(MixinInternals.java:131) ~[mixinextras-fabric-0.4.1.jar:?]
-	at com.llamalad7.mixinextras.utils.MixinInternals.getMixinsFor(MixinInternals.java:60) ~[mixinextras-fabric-0.4.1.jar:?]
-	at com.llamalad7.mixinextras.transformer.MixinTransformerExtension.preApply(MixinTransformerExtension.java:28) ~[mixinextras-fabric-0.4.1.jar:?]
-	at org.spongepowered.asm.mixin.transformer.ext.Extensions.preApply(Extensions.java:156) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.TargetClassContext.preApply(TargetClassContext.java:429) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.TargetClassContext.applyMixins(TargetClassContext.java:416) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinProcessor.applyMixins(MixinProcessor.java:363) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClass(MixinTransformer.java:234) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at org.spongepowered.asm.mixin.transformer.MixinTransformer.transformClassBytes(MixinTransformer.java:202) ~[sponge-mixin-0.15.3+mixin.0.8.7.jar:0.15.3+mixin.0.8.7]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.getPostMixinClassByteArray(KnotClassDelegate.java:422) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.tryLoadClass(KnotClassDelegate.java:323) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassDelegate.loadClass(KnotClassDelegate.java:218) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClassLoader.loadClass(KnotClassLoader.java:119) ~[fabric-loader-0.16.4.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
-	at net.minecraft.util.crash.CrashReport.<init>(CrashReport.java:34) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.util.crash.CrashReport.initCrashReport(CrashReport.java:274) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:164) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+[09:37:23] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 171 milliseconds
+[09:37:25] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[09:37:26] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
+	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.<init>(YggdrasilUserApiService.java:55) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createUserApiService(YggdrasilAuthenticationService.java:124) ~[authlib-4.0.43.jar:?]
+	at net.minecraft.client.MinecraftClient.createUserApiService(MinecraftClient.java:733) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.client.MinecraftClient.<init>(MinecraftClient.java:442) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:211) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.4.jar:?]
-	... 3 more
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.4.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:85) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
+	... 9 more
+[09:37:26] [Render thread/INFO] (Minecraft) Setting user: Player150
+[09:37:26] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[09:37:27] [Worker-Main-1/INFO] (Mod Menu/Update Checker) Checking mod updates...
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Logging HotModInjector
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Checking hmj.mixins.json
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.SimpleRegistryMixin
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.KeyBindingRegistryImplMixin
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.accessors.GameOptionsAccessor
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.TitleScreenMixin
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ex.HotInstallMod
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ClientTick
+[09:37:27] [Render thread/INFO] (Minecraft) [STDOUT]: net.fabricmc.loader.impl.launch.knot.MixinServiceKnot
+[09:37:27] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[09:37:28] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-game-rule-api-v1, fabric-mining-level-api-v1, fabric-renderer-api-v1, fabric-renderer-registries-v1, fabric-loot-api-v2, fabric-api-base, fabric-rendering-fluids-v1, fabric-transitive-access-wideners-v1, fabric-resource-loader-v0, fabric-data-attachment-api-v1, fabric-command-api-v1, fabric-models-v0, fabric-commands-v0, fabric-renderer-indigo, fabric-dimensions-v1, fabric-content-registries-v0, fabric-convention-tags-v1, fabric-screen-handler-api-v1, modmenu, fabric-sound-api-v1, fabric-item-api-v1, fabric-gametest-api-v1, fabric-client-tags-api-v1, fabric-entity-events-v1, fabric-message-api-v1, fabric-transfer-api-v1, fabric-networking-api-v1, fabric-containers-v0, fabric-blockrenderlayer-v1, fabric-events-lifecycle-v0, fabric-lifecycle-events-v1, fabric-recipe-api-v1, fabric-rendering-v0, fabric-screen-api-v1, fabric-block-api-v1, fabric-data-generation-api-v1, fabric-object-builder-api-v1, fabric-rendering-v1, fabric-command-api-v2, fabric-keybindings-v0, fabricloader, fabric-loot-tables-v1, fabric-api-lookup-api-v1, fabric-events-interaction-v0, fabric-crash-report-info-v1, fabric-model-loading-api-v1, fabric-rendering-data-attachment-v1, fabric-key-binding-api-v1, fabric-resource-conditions-api-v1, fabric-api, fabric-particles-v1, fabric-networking-v0, fabric-biome-api-v1, fabric-item-group-api-v1, fabric-block-view-api-v2, fabric-registry-sync-v0), file/mixinhotinjecttester-1.0.zip
+[09:37:28] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[09:37:29] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[09:37:30] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[09:37:30] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[09:37:30] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on ÑïÉùÆ÷ (Realtek High Definition Audio)
+[09:37:30] [Render thread/INFO] (Minecraft) Sound engine started
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[09:37:30] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[09:37:30] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[09:37:55] [Render thread/WARN] (Mod Menu | FabricMod) Warning! Mod hmj has a broken icon, loading default icon
+[09:37:57] [Render thread/INFO] (Minecraft) Stopping!

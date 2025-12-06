@@ -163,7 +163,7 @@ public class ModInjector {
                 ModContainerImpl modContainer = (ModContainerImpl) loader.getModContainer(modID).get();
                 NewMixinUtils.addIntoMixinConfig(modContainer);
                 NewMixinUtils.selectMixinConfigs(modContainer);
-                NewMixinUtils.addMixinsIntoMixinClassLoader(modContainer);
+                NewMixinUtils.initAndInjectMixins(modContainer);
                 //NewMixinUtils.retransformMixinTargetClasses(modContainer);
                 /*for (String mixinConfig : candidate.getMetadata().getMixinConfigs(EnvType.CLIENT)) {
                     try {
