@@ -1,23 +1,37 @@
 package cn.ksmcbrigade.hmj.utils;
 
 import com.sun.tools.attach.VirtualMachine;
-import net.fabricmc.loader.impl.launch.knot.MixinServiceKnot;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.impl.launch.FabricLauncher;
+import net.fabricmc.loader.impl.launch.FabricLauncherBase;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.jetbrains.annotations.NotNull;
-import org.spongepowered.tools.agent.MixinAgent;
 import sun.misc.Unsafe;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.lang.instrument.ClassDefinition;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import java.lang.management.ManagementFactory;
-import java.lang.reflect.AccessibleObject;
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
+import java.lang.reflect.*;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.jar.JarFile;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
 
 /**
  * &#064;Author: KSmc_brigade
@@ -295,5 +309,65 @@ public class UnsafeUtils {
             e.printStackTrace();
         }
 
+    }
+
+    public static class ClassRedefiner{
+        public static void redefineClassByAddingURLs(ClassDefinition... classDefinitions) throws ClassNotFoundException, IllegalAccessException, NoSuchFieldException, IOException, InvocationTargetException, NoSuchMethodException {
+            FabricLoader loader = FabricLoader.getInstance();
+            FabricLauncher launcherBase = FabricLauncherBase.getLauncher();
+            ClassLoader knotClassDelegate = launcherBase.getTargetClassLoader();
+            System.out.println("knotClassLoader: "+knotClassDelegate.getClass().getName());
+            Class<?> knot = Class.forName("net.fabricmc.loader.impl.launch.knot.KnotClassLoader");
+            if(knot.isAssignableFrom(knotClassDelegate.getClass()) || knot.equals(knotClassDelegate.getClass())){
+                Field classLoaderF = knotClassDelegate.getClass().getDeclaredField("urlLoader");
+                classLoaderF.setAccessible(true);
+                URLClassLoader classLoader = (URLClassLoader) classLoaderF.get(knotClassDelegate);
+
+                File tmpDir = new File(".mixin_redefine_tmp");
+                tmpDir.mkdirs();
+                File tmp = tmpDir.toPath().resolve(RandomStringUtils.randomNumeric(8)+".jar").toFile();
+                FileUtils.writeByteArrayToFile(tmp, IOUtils.toByteArray(UnsafeUtils.ClassRedefiner.class.getResourceAsStream("/define_tmp.jar")));
+                File tmpDefineDir = new File(tmp.getPath().replace(".jar","")+"_tmp");
+                tmpDefineDir.mkdirs();
+                File meta = tmpDefineDir.toPath().resolve("META-INF").toFile();
+                meta.mkdirs();
+                FileUtils.writeStringToFile(meta.toPath().resolve("MANIFEST.MF").toFile(),"Manifest-Version: 1.0");
+                for (ClassDefinition classDefinition : classDefinitions) {
+                    String[] packages = classDefinition.getDefinitionClass().getName().split("\\.");
+                    Path td = tmpDefineDir.toPath();
+                    for (int i1 = 0; i1 < packages.length; i1++) {
+                        td = td.resolve(packages[i1]);
+                        td.toFile().mkdirs();
+                    }
+                    td.toFile().delete();
+                    File file = new File(td+".class");
+                    FileUtils.writeByteArrayToFile(file,classDefinition.getDefinitionClassFile());
+                }
+                Path sourceDir = Paths.get(tmpDefineDir.getPath());
+
+                try (FileOutputStream fos = new FileOutputStream(tmp);
+                     ZipOutputStream zos = new ZipOutputStream(fos)) {
+
+                    Files.walk(sourceDir)
+                            .filter(path -> !Files.isDirectory(path))
+                            .forEach(path -> {
+                                try {
+                                    String zipEntryName = sourceDir.relativize(path).toString();
+                                    ZipEntry zipEntry = new ZipEntry(zipEntryName);
+                                    zos.putNextEntry(zipEntry);
+                                    Files.copy(path, zos);
+                                    zos.closeEntry();
+
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            });
+                }
+
+                Method addURL_M = classLoader.getClass().getDeclaredMethod("addURL", URL.class);
+                addURL_M.setAccessible(true);
+                addURL_M.invoke(classLoader,tmp.getAbsoluteFile().toURL());
+            }
+        }
     }
 }

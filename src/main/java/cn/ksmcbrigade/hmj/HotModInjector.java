@@ -2,6 +2,7 @@ package cn.ksmcbrigade.hmj;
 
 import cn.ksmcbrigade.hmj.utils.ModInjector;
 import cn.ksmcbrigade.hmj.utils.NewMixinUtils;
+import cn.ksmcbrigade.hmj.utils.UnsafeUtils;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;

@@ -1,5 +1,5 @@
-[09:56:26] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.4
-[09:56:27] [main/INFO] (FabricLoader) Loading 60 mods:
+[13:50:54] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.4
+[13:50:55] [main/INFO] (FabricLoader) Loading 60 mods:
 	- fabric-api 0.92.2+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
 	- fabric-api-lookup-api-v1 1.6.36+1802ada577
@@ -60,17 +60,17 @@
 	- minecraft 1.20.1
 	- mixinextras 0.4.1
 	- modmenu 7.2.2
-[09:56:27] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/F:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.3+mixin.0.8.7/51ee0a44ab05f6fddd66b09e66b3a16904f9c55d/sponge-mixin-0.15.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[09:56:27] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
-[09:56:27] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[09:56:27] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[09:56:27] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[09:56:28] [main/INFO] (FabricLoader/Mixin/agent) Redefining class net/fabricmc/loader/impl/launch/knot/MixinServiceKnot
-[09:56:28] [main/INFO] (FabricLoader/Mixin/agent) !!!!!!!!!!
-[09:56:29] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
-[09:56:33] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 177 milliseconds
-[09:56:35] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[09:56:36] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[13:50:55] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/F:/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.3+mixin.0.8.7/51ee0a44ab05f6fddd66b09e66b3a16904f9c55d/sponge-mixin-0.15.3+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[13:50:55] [main/INFO] (FabricLoader/Mixin) Attempting to load Hot-Swap agent
+[13:50:55] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[13:50:55] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[13:50:55] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[13:50:56] [main/INFO] (FabricLoader/Mixin/agent) Redefining class net/fabricmc/loader/impl/launch/knot/MixinServiceKnot
+[13:50:56] [main/INFO] (FabricLoader/Mixin/agent) !!!!!!!!!!
+[13:50:57] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[13:51:01] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 170 milliseconds
+[13:51:03] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[13:51:04] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
@@ -88,103 +88,659 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 9 more
-[09:56:36] [Render thread/INFO] (Minecraft) Setting user: Player104
-[09:56:36] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[09:56:36] [Worker-Main-1/INFO] (Mod Menu/Update Checker) Checking mod updates...
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Constructing NPOPTransformer...
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Logging HotModInjector
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Checking hmj.mixins.json
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.SimpleRegistryMixin
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.KeyBindingRegistryImplMixin
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ex.HotInstallMod
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.TitleScreenMixin
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.accessors.GameOptionsAccessor
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ClientTick
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: net.fabricmc.loader.impl.launch.knot.MixinServiceKnot
-[09:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] NPOPTransformer is running.
-[09:56:37] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
-[09:56:38] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-data-generation-api-v1, fabric-recipe-api-v1, fabric-networking-v0, fabric-renderer-registries-v1, fabric-api-base, fabric-rendering-fluids-v1, fabric-entity-events-v1, fabric-item-api-v1, fabric-renderer-api-v1, fabric-rendering-v1, fabric-loot-api-v2, fabric-lifecycle-events-v1, fabric-data-attachment-api-v1, fabric-item-group-api-v1, fabric-client-tags-api-v1, fabric-block-view-api-v2, fabric-api-lookup-api-v1, fabric-api, fabric-resource-loader-v0, fabric-events-lifecycle-v0, fabric-object-builder-api-v1, fabric-biome-api-v1, fabric-screen-handler-api-v1, fabric-mining-level-api-v1, fabric-renderer-indigo, fabric-gametest-api-v1, fabric-screen-api-v1, fabric-game-rule-api-v1, fabric-content-registries-v0, fabric-containers-v0, fabric-particles-v1, fabric-registry-sync-v0, fabric-key-binding-api-v1, fabric-command-api-v1, fabric-transitive-access-wideners-v1, modmenu, fabric-block-api-v1, fabric-command-api-v2, fabric-transfer-api-v1, fabric-loot-tables-v1, fabric-rendering-data-attachment-v1, fabricloader, fabric-model-loading-api-v1, fabric-crash-report-info-v1, fabric-models-v0, fabric-message-api-v1, fabric-keybindings-v0, fabric-dimensions-v1, fabric-events-interaction-v0, fabric-blockrenderlayer-v1, fabric-networking-api-v1, fabric-resource-conditions-api-v1, fabric-commands-v0, fabric-rendering-v0, fabric-sound-api-v1, fabric-convention-tags-v1), file/mixinhotinjecttester-1.0.zip
-[09:56:38] [Worker-Main-7/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[09:56:39] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
-[09:56:40] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[09:56:40] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[09:56:40] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek High Definition Audio)
-[09:56:40] [Render thread/INFO] (Minecraft) Sound engine started
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[09:56:40] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[09:56:41] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[09:56:41] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[09:56:41] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[09:56:41] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[09:56:53] [Render thread/WARN] (Mod Menu | FabricMod) Warning! Mod hmj has a broken icon, loading default icon
-[09:57:22] [Render thread/INFO] (Minecraft) [STDOUT]: Setting the mod path...
-[09:57:22] [Render thread/INFO] (Minecraft) [STDOUT]: Remapping...
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: Add the mixins...
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Adding mixin config: mixinhotinjecttester.mixins.json
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Apply mixin configs...
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Invoking MixinConfig::onSelect ...
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got package: cn.ksmcbrigade.mixinhotinjecttester.mixin.
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding PlayerMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Found @Mixin annotation in bytecode
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got mixin and targets: class cn.ksmcbrigade.mixinhotinjecttester.mixin.PlayerMixin : [class net.minecraft.entity.player.PlayerEntity]
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding ClientEntityManagerListenerMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Found @Mixin annotation in bytecode
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got mixin and targets: class cn.ksmcbrigade.mixinhotinjecttester.mixin.ClientEntityManagerListenerMixin : [class net.minecraft.client.world.ClientEntityManager$Listener]
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding MultiplayerScreenMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Found @Mixin annotation in bytecode
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got mixin and targets: class cn.ksmcbrigade.mixinhotinjecttester.mixin.MultiplayerScreenMixin : [class net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen]
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding TitleScreenMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Found @Mixin annotation in bytecode
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got mixin and targets: class cn.ksmcbrigade.mixinhotinjecttester.mixin.TitleScreenMixin : [class net.minecraft.client.gui.screen.TitleScreen]
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Invoking MixinConfig::prepareMixins ...
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Adding mixinhotinjecttester.mixins.json
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] logMixinsForTargetClass: [mixinhotinjecttester.mixins.json:MultiplayerScreenMixin from mod mixinhotinjecttester]
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [redefineTargetClass] Redefining class net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
-[09:57:25] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Retransforming net/minecraft/client/gui/screen/multiplayer/MultiplayerScreen
-[09:57:25] [Render thread/INFO] (FabricLoader/Mixin/agent) Redefining class net/minecraft/client/gui/screen/multiplayer/MultiplayerScreen
-[09:57:26] [Render thread/ERROR] (Minecraft) Reported exception thrown!
-net.minecraft.util.crash.CrashException: mouseClicked event handler
-	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:414) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.Mouse.onMouseButton(Mouse.java:98) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.Mouse.method_22686(Mouse.java:169) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.util.thread.ThreadExecutor.execute(ThreadExecutor.java:102) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.Mouse.method_22684(Mouse.java:169) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at org.lwjgl.system.JNI.invokeV(Native Method) ~[lwjgl-3.3.1.jar:build 7]
-	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403) ~[lwjgl-glfw-3.3.1.jar:build 7]
-	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:201) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:212) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.util.Window.swapBuffers(Window.java:288) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1241) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:802) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.main.Main.main(Main.java:250) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.4.jar:?]
-	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-Caused by: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
-	at sun.instrument.InstrumentationImpl.redefineClasses0(Native Method) ~[?:?]
-	at sun.instrument.InstrumentationImpl.redefineClasses(InstrumentationImpl.java:195) ~[?:?]
-	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.redefineTargetClass(NewMixinUtils.java:169) ~[main/:?]
-	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.initAndInjectMixins(NewMixinUtils.java:137) ~[main/:?]
-	at cn.ksmcbrigade.hmj.utils.ModInjector.install(ModInjector.java:166) ~[main/:?]
-	at com.terraformersmc.modmenu.gui.ModsScreen.handler$zkf000$hmj$installMod(ModsScreen.java:554) ~[modmenu-7.2.2.jar:?]
-	at com.terraformersmc.modmenu.gui.ModsScreen.lambda$filesDragged$14(ModsScreen.java:452) ~[modmenu-7.2.2.jar:?]
-	at net.minecraft.client.gui.screen.ConfirmScreen.method_37054(ConfirmScreen.java:55) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.gui.widget.ButtonWidget.onPress(ButtonWidget.java:94) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.gui.widget.PressableWidget.onClick(PressableWidget.java:56) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.gui.widget.ClickableWidget.mouseClicked(ClickableWidget.java:189) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.gui.ParentElement.mouseClicked(ParentElement.java:38) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.Mouse.method_1611(Mouse.java:98) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:409) ~[minecraft-merged-7787b014d4-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	... 17 more
+[13:51:04] [Render thread/INFO] (Minecraft) Setting user: Player87
+[13:51:04] [Worker-Main-1/INFO] (Mod Menu/Update Checker) Checking mod updates...
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Constructing NPOPTransformer...
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Logging HotModInjector
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Checking hmj.mixins.json
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.SimpleRegistryMixin
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.TitleScreenMixin
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.accessors.GameOptionsAccessor
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.KeyBindingRegistryImplMixin
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ex.HotInstallMod
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] class cn.ksmcbrigade.hmj.mixin.ClientTick
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: net.fabricmc.loader.impl.launch.knot.MixinServiceKnot
+[13:51:04] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] NPOPTransformer is running.
+[13:51:04] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[13:51:05] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[13:51:06] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-networking-api-v1, fabric-command-api-v2, modmenu, fabric-object-builder-api-v1, fabric-rendering-v0, fabric-data-generation-api-v1, fabric-key-binding-api-v1, fabric-containers-v0, fabric-screen-api-v1, fabric-data-attachment-api-v1, fabric-entity-events-v1, fabric-block-view-api-v2, fabric-loot-api-v2, fabric-sound-api-v1, fabric-keybindings-v0, fabric-command-api-v1, fabric-screen-handler-api-v1, fabric-api-lookup-api-v1, fabric-networking-v0, fabric-dimensions-v1, fabric-registry-sync-v0, fabric-particles-v1, fabric-loot-tables-v1, fabric-transitive-access-wideners-v1, fabric-resource-loader-v0, fabric-events-lifecycle-v0, fabric-api-base, fabric-blockrenderlayer-v1, fabric-model-loading-api-v1, fabric-resource-conditions-api-v1, fabric-item-api-v1, fabric-gametest-api-v1, fabric-events-interaction-v0, fabric-crash-report-info-v1, fabric-convention-tags-v1, fabric-lifecycle-events-v1, fabric-commands-v0, fabric-rendering-data-attachment-v1, fabric-item-group-api-v1, fabric-message-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-game-rule-api-v1, fabricloader, fabric-renderer-registries-v1, fabric-transfer-api-v1, fabric-biome-api-v1, fabric-recipe-api-v1, fabric-renderer-api-v1, fabric-client-tags-api-v1, fabric-block-api-v1, fabric-api, fabric-rendering-v1, fabric-content-registries-v0, fabric-models-v0, fabric-mining-level-api-v1), file/mixinhotinjecttester-1.0.zip
+[13:51:06] [Worker-Main-7/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[13:51:07] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: java.lang.RuntimeException: Failed to parse into SignedJWT: FabricMC
+[13:51:07] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[13:51:07] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[13:51:07] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek High Definition Audio)
+[13:51:07] [Render thread/INFO] (Minecraft) Sound engine started
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[13:51:07] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[13:51:08] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[13:51:08] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[13:51:08] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[13:51:08] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[13:51:11] [Render thread/WARN] (Mod Menu | FabricMod) Warning! Mod hmj has a broken icon, loading default icon
+[13:51:13] [Render thread/INFO] (Minecraft) [STDOUT]: Setting the mod path...
+[13:51:13] [Render thread/INFO] (Minecraft) [STDOUT]: Remapping...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: Add the mixins...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Adding mixin config: mixinhotinjecttester.mixins.json
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Apply mixin configs...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Invoking FabricMixinBootstrap$MixinConfigDecorator::apply ...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Invoking MixinConfig::onSelect ...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Got package: cn.ksmcbrigade.mixinhotinjecttester.mixin.
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : []
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding PlayerMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding ClientEntityManagerListenerMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding MultiplayerScreenMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Finding TitleScreenMixin.class in D:\MinecraftFabricMod\HotModInjector\run\.fabric\processedMods\mixinhotinjecttester-1.0-64b5720b4b825f21.jar
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Invoking MixinConfig::prepareMixins ...
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Adding mixinhotinjecttester.mixins.json
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [redefineTargetClass] Redefining class net.minecraft.client.world.ClientEntityManager$Listener
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateEntityPosition
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: remove
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zme000$mixinhotinjecttester$init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: entity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: lastSectionPos
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: section
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: manager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: knotClassLoader: net.fabricmc.loader.impl.launch.knot.KnotClassLoader
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Retransforming net/minecraft/client/world/ClientEntityManager$Listener
+[13:51:17] [Render thread/INFO] (FabricLoader/Mixin/agent) Redefining class net/minecraft/client/world/ClientEntityManager$Listener
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: java.lang.UnsupportedOperationException: class redefinition failed: attempted to change the class modifiers
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses0(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses(InstrumentationImpl.java:195)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.redefineTargetClass(NewMixinUtils.java:185)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.initAndInjectMixins(NewMixinUtils.java:146)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.ModInjector.install(ModInjector.java:166)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.handler$zbf000$hmj$installMod(ModsScreen.java:554)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.lambda$filesDragged$14(ModsScreen.java:452)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.ConfirmScreen.method_37054(ConfirmScreen.java:55)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ButtonWidget.onPress(ButtonWidget.java:94)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.PressableWidget.onClick(PressableWidget.java:56)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ClickableWidget.mouseClicked(ClickableWidget.java:189)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.ParentElement.mouseClicked(ParentElement.java:38)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_1611(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:409)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.onMouseButton(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22686(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.util.thread.ThreadExecutor.execute(ThreadExecutor.java:102)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22684(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.system.JNI.invokeV(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:201)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:212)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.util.Window.swapBuffers(Window.java:288)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1241)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:802)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.main.Main.main(Main.java:250)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [redefineTargetClass] Redefining class net.minecraft.client.gui.screen.TitleScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isRealmsNotificationsGuiDisplayed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tick
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: loadTexturesAsync
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldPause
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldCloseOnEsc
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: initWidgetsNormal
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getMultiplayerDisabledText
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: initWidgetsDemo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canReadDemoWorldData
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: switchToRealms
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: render
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mouseClicked
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: removed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onDisplayed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onDemoDeletionConfirmed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19857
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19858
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onRealmsButtonPress
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onMultiplayerButtonPressed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19861
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_41198
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_20109
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19862
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19863
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19864
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_48268
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <clinit>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: modify$zzk000$modmenu$adjustRealmsHeight
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: modify$zzk000$modmenu$onRender
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zbe000$hmj$init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mdb2f66c$hmj$lambda$init$0$0
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zmf004$mixinhotinjecttester$init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: LOGGER
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: DEMO_WORLD_NAME
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: COPYRIGHT
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: PANORAMA_CUBE_MAP
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: PANORAMA_OVERLAY
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: splashText
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: buttonResetDemo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: realmsNotificationGui
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: backgroundRenderer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: doBackgroundFade
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: backgroundFadeStart
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: deprecationNotice
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: logoDrawer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: knotClassLoader: net.fabricmc.loader.impl.launch.knot.KnotClassLoader
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Retransforming net/minecraft/client/gui/screen/TitleScreen
+[13:51:17] [Render thread/INFO] (FabricLoader/Mixin/agent) Redefining class net/minecraft/client/gui/screen/TitleScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: java.lang.UnsupportedOperationException: class redefinition failed: attempted to change the schema (add/remove fields)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses0(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses(InstrumentationImpl.java:195)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.redefineTargetClass(NewMixinUtils.java:185)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.initAndInjectMixins(NewMixinUtils.java:146)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.ModInjector.install(ModInjector.java:166)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.handler$zbf000$hmj$installMod(ModsScreen.java:554)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.lambda$filesDragged$14(ModsScreen.java:452)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.ConfirmScreen.method_37054(ConfirmScreen.java:55)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ButtonWidget.onPress(ButtonWidget.java:94)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.PressableWidget.onClick(PressableWidget.java:56)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ClickableWidget.mouseClicked(ClickableWidget.java:189)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.ParentElement.mouseClicked(ParentElement.java:38)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_1611(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:409)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.onMouseButton(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22686(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.util.thread.ThreadExecutor.execute(ThreadExecutor.java:102)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22684(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.system.JNI.invokeV(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:201)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:212)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.util.Window.swapBuffers(Window.java:288)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1241)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:802)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.main.Main.main(Main.java:250)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [redefineTargetClass] Redefining class net.minecraft.entity.player.PlayerEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isBlockBreakingRestricted
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: createPlayerAttributes
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: initDataTracker
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tick
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldCancelInteraction
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldDismount
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: clipAtLedge
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateWaterSubmersionState
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateTurtleHelmet
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: createCooldownManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateCapeAngles
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updatePose
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getMaxNetherPortalTime
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getSwimSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getSplashSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getHighSpeedSplashSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getDefaultPortalCooldown
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: playSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: playSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getSoundCategory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getBurningDuration
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handleStatus
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: spawnParticles
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: closeHandledScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onHandledScreenClosed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tickRiding
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tickNewAi
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tickMovement
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateShoulderEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: collideWithEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getScore
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setScore
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addScore
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: useRiptide
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onDeath
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dropInventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: vanishCursedItems
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getHurtSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getDeathSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dropItem
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dropItem
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getBlockBreakingSpeed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canHarvest
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: readCustomDataFromNbt
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: writeCustomDataToNbt
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isInvulnerableTo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: damage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: takeShieldHit
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canTakeDamage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldDamagePlayer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: damageArmor
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: damageHelmet
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: damageShield
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: applyDamage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isOnSoulSpeedBlock
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldFilterText
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openEditSignScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openCommandBlockMinecartScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openCommandBlockScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openStructureBlockScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openJigsawScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openHorseInventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: openHandledScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: sendTradeOffers
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: useBook
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: interact
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getHeightOffset
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dismountVehicle
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isImmobile
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldSwimInFluids
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: adjustMovementForSneaking
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_30263
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: attack
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: attackLivingEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: disableShield
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addCritParticles
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addEnchantedHitParticles
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: spawnSweepAttackParticles
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: requestRespawn
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: remove
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isMainPlayer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getGameProfile
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getInventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getAbilities
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onPickupSlotClick
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldCloseHandledScreenOnRespawn
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: trySleep
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: wakeUp
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: wakeUp
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: findRespawnPosition
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canResetTimeBySleeping
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getSleepTimer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: sendMessage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: incrementStat
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: increaseStat
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: incrementStat
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: increaseStat
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: resetStat
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: unlockRecipes
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onRecipeCrafted
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: unlockRecipes
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: lockRecipes
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: jump
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: travel
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateSwimming
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: doesNotSuffocate
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getMovementSpeed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: increaseTravelMotionStats
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: increaseRidingMotionStats
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handleFallDamage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: checkFallFlying
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: startFallFlying
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: stopFallFlying
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onSwimmingStart
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: playStepSound
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getFallSounds
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: onKilledOther
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: slowMovement
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addExperience
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getEnchantmentTableSeed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: applyEnchantmentCosts
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addExperienceLevels
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getNextLevelExperience
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addExhaustion
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getSculkShriekerWarningManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getHungerManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canConsume
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canFoodHeal
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canModifyBlocks
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canPlaceOn
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getXpToDrop
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldAlwaysDropXp
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldRenderName
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getMoveEffect
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: sendAbilitiesUpdate
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getName
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getEnderChestInventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getEquippedStack
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isArmorSlot
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: equipStack
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: giveItemStack
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getHandItems
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getArmorItems
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addShoulderEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dropShoulderEntities
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: dropShoulderEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isSpectator
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canBeHitByProjectile
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isSwimming
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isCreative
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isPushedByFluids
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getScoreboard
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getDisplayName
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addTellClickEvent
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getEntityName
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getActiveEyeHeight
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setAbsorptionAmount
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getAbsorptionAmount
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isPartVisible
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getStackReference
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: hasReducedDebugInfo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setReducedDebugInfo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setFireTicks
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getMainArm
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setMainArm
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getShoulderEntityLeft
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setShoulderEntityLeft
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getShoulderEntityRight
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setShoulderEntityRight
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getAttackCooldownProgressPerTick
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getAttackCooldownProgress
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: resetLastAttackedTicks
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getItemCooldownManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getVelocityMultiplier
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getLuck
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isCreativeLevelTwoOp
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canEquip
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getDimensions
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getPoses
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getProjectileType
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: eatFood
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldRemoveSoulSpeedBoost
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getLeashPos
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isPlayer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: isUsingSpyglass
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: shouldSave
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getLastDeathPos
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setLastDeathPos
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getDamageTiltYaw
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: animateDamage
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: canSprintAsVehicle
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getOffGroundSpeed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_7321
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_17853
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_20266
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_43121
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_43119
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_17851
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_17852
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <clinit>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zcl000$fabric-entity-events-v1$onTrySleep
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: redirect$zcl000$fabric-entity-events-v1$redirectDaySleepCheck
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zcl000$fabric-entity-events-v1$onIsSleepingLongEnough
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zdb000$fabric-entity-events-v1$injectElytraCheck
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zmg000$mixinhotinjecttester$jumpM
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zmg000$mixinhotinjecttester$handleFallDamageM
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: LOGGER
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30643
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30644
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30645
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30646
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30647
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30648
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30649
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30650
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: DEFAULT_EYE_HEIGHT
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: STANDING_DIMENSIONS
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: POSE_DIMENSIONS
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_30652
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: ABSORPTION_AMOUNT
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: SCORE
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: PLAYER_MODEL_PARTS
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: MAIN_ARM
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: LEFT_SHOULDER_ENTITY
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: RIGHT_SHOULDER_ENTITY
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: shoulderEntityAddedTime
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: inventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: enderChestInventory
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: playerScreenHandler
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: currentScreenHandler
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: hungerManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: abilityResyncCountdown
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: prevStrideDistance
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: strideDistance
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: experiencePickUpDelay
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: prevCapeX
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: prevCapeY
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: prevCapeZ
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: capeX
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: capeY
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: capeZ
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: sleepTimer
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: isSubmergedInWater
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: abilities
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: experienceLevel
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: totalExperience
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: experienceProgress
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: enchantmentTableSeed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_7509
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: lastPlayedLevelUpSoundTime
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: gameProfile
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: reducedDebugInfo
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: selectedItem
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: itemCooldownManager
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: lastDeathPos
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: fishHook
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: damageTiltYaw
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: knotClassLoader: net.fabricmc.loader.impl.launch.knot.KnotClassLoader
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Retransforming net/minecraft/entity/player/PlayerEntity
+[13:51:17] [Render thread/INFO] (FabricLoader/Mixin/agent) Redefining class net/minecraft/entity/player/PlayerEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: java.lang.UnsupportedOperationException: class redefinition failed: attempted to change the schema (add/remove fields)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses0(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses(InstrumentationImpl.java:195)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.redefineTargetClass(NewMixinUtils.java:185)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.initAndInjectMixins(NewMixinUtils.java:146)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.ModInjector.install(ModInjector.java:166)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.handler$zbf000$hmj$installMod(ModsScreen.java:554)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.lambda$filesDragged$14(ModsScreen.java:452)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.ConfirmScreen.method_37054(ConfirmScreen.java:55)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ButtonWidget.onPress(ButtonWidget.java:94)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.PressableWidget.onClick(PressableWidget.java:56)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ClickableWidget.mouseClicked(ClickableWidget.java:189)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.ParentElement.mouseClicked(ParentElement.java:38)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_1611(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:409)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.onMouseButton(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22686(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.util.thread.ThreadExecutor.execute(ThreadExecutor.java:102)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22684(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.system.JNI.invokeV(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:201)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:212)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.util.Window.swapBuffers(Window.java:288)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1241)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:802)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.main.Main.main(Main.java:250)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [redefineTargetClass] Redefining class net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <init>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: tick
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: removed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: refresh
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: removeEntry
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: editEntry
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: addEntry
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: directConnect
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: keyPressed
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: render
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: connect
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: connect
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: select
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: updateButtonActivationStates
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getServerListPinger
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: setMultiplayerScreenTooltip
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: getServerList
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19912
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19913
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19914
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19915
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19916
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19917
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: method_19918
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: <clinit>
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: handler$zmh005$mixinhotinjecttester$init
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_41849
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_41850
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_41851
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: field_41852
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: LOGGER
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: serverListPinger
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: parent
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: serverListWidget
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: serverList
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: buttonEdit
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: buttonJoin
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: buttonDelete
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: multiplayerScreenTooltip
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: selectedEntry
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: lanServers
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: lanServerDetector
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: f: initialized
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: knotClassLoader: net.fabricmc.loader.impl.launch.knot.KnotClassLoader
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [HotMixinAgent] Retransforming net/minecraft/client/gui/screen/multiplayer/MultiplayerScreen
+[13:51:17] [Render thread/INFO] (FabricLoader/Mixin/agent) Redefining class net/minecraft/client/gui/screen/multiplayer/MultiplayerScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: java.lang.UnsupportedOperationException: class redefinition failed: attempted to add a method
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses0(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at java.instrument/sun.instrument.InstrumentationImpl.redefineClasses(InstrumentationImpl.java:195)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.redefineTargetClass(NewMixinUtils.java:185)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.NewMixinUtils.initAndInjectMixins(NewMixinUtils.java:146)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at cn.ksmcbrigade.hmj.utils.ModInjector.install(ModInjector.java:166)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.handler$zbf000$hmj$installMod(ModsScreen.java:554)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.terraformersmc.modmenu.gui.ModsScreen.lambda$filesDragged$14(ModsScreen.java:452)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.ConfirmScreen.method_37054(ConfirmScreen.java:55)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ButtonWidget.onPress(ButtonWidget.java:94)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.PressableWidget.onClick(PressableWidget.java:56)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.widget.ClickableWidget.mouseClicked(ClickableWidget.java:189)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.ParentElement.mouseClicked(ParentElement.java:38)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_1611(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:409)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.onMouseButton(Mouse.java:98)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22686(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.util.thread.ThreadExecutor.execute(ThreadExecutor.java:102)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.Mouse.method_22684(Mouse.java:169)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFWMouseButtonCallbackI.callback(GLFWMouseButtonCallbackI.java:43)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.system.JNI.invokeV(Native Method)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3403)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.pollEvents(RenderSystem.java:201)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:212)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.util.Window.swapBuffers(Window.java:288)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1241)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:802)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.minecraft.client.main.Main.main(Main.java:250)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDERR]: 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Logging mixinHotInjectTester
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] Checking mixinhotinjecttester.mixins.json
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: mixinhotinjecttester.mixins.json : [net.minecraft.client.gui.screen.TitleScreen, net.minecraft.entity.player.PlayerEntity, net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen, net.minecraft.client.world.ClientEntityManager$Listener]
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] Package: cn.ksmcbrigade.mixinhotinjecttester.mixin.
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] mixinhotinjecttester.mixins.json : net.minecraft.client.gui.screen.TitleScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] mixinhotinjecttester.mixins.json : net.minecraft.entity.player.PlayerEntity
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] mixinhotinjecttester.mixins.json : net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [NewMixinUtils] [INFO] mixinhotinjecttester.mixins.json : net.minecraft.client.world.ClientEntityManager$Listener
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [MixinHotInjectTester] Main Entrypoint Loaded.
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: [MixinHotInjectTester] Client Entrypoint Loaded.
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: ran the mod entry points.
+[13:51:17] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-networking-api-v1, fabric-command-api-v2, modmenu, fabric-object-builder-api-v1, fabric-rendering-v0, fabric-data-generation-api-v1, fabric-key-binding-api-v1, fabric-containers-v0, fabric-screen-api-v1, fabric-data-attachment-api-v1, fabric-entity-events-v1, fabric-block-view-api-v2, fabric-loot-api-v2, fabric-sound-api-v1, fabric-keybindings-v0, fabric-command-api-v1, fabric-screen-handler-api-v1, fabric-api-lookup-api-v1, fabric-networking-v0, fabric-dimensions-v1, fabric-registry-sync-v0, fabric-particles-v1, fabric-loot-tables-v1, fabric-transitive-access-wideners-v1, fabric-resource-loader-v0, fabric-events-lifecycle-v0, fabric-api-base, fabric-blockrenderlayer-v1, fabric-model-loading-api-v1, fabric-resource-conditions-api-v1, fabric-item-api-v1, fabric-gametest-api-v1, fabric-events-interaction-v0, fabric-crash-report-info-v1, fabric-convention-tags-v1, fabric-lifecycle-events-v1, fabric-commands-v0, fabric-rendering-data-attachment-v1, fabric-item-group-api-v1, fabric-message-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-game-rule-api-v1, fabricloader, fabric-renderer-registries-v1, fabric-transfer-api-v1, fabric-biome-api-v1, fabric-recipe-api-v1, fabric-renderer-api-v1, fabric-client-tags-api-v1, fabric-block-api-v1, fabric-api, fabric-rendering-v1, fabric-content-registries-v0, fabric-models-v0, fabric-mining-level-api-v1), file/mixinhotinjecttester-1.0.zip
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: Add the resource and data packing...
+[13:51:17] [Worker-Main-5/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: Enabled a resource pack.
+[13:51:17] [Render thread/INFO] (Minecraft) [STDOUT]: Success inject a mod in runtime.
+[13:51:17] [Render thread/WARN] (Mod Menu | FabricMod) Warning! Mod mixinhotinjecttester has a broken icon, loading default icon
+[13:51:18] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[13:51:18] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[13:51:18] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek High Definition Audio)
+[13:51:18] [Render thread/INFO] (Minecraft) Sound engine started
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[13:51:18] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[13:51:18] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[13:51:20] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-networking-api-v1, fabric-command-api-v2, modmenu, fabric-object-builder-api-v1, fabric-rendering-v0, fabric-data-generation-api-v1, fabric-key-binding-api-v1, fabric-containers-v0, fabric-screen-api-v1, fabric-data-attachment-api-v1, fabric-entity-events-v1, fabric-block-view-api-v2, fabric-loot-api-v2, fabric-sound-api-v1, fabric-keybindings-v0, fabric-command-api-v1, fabric-screen-handler-api-v1, fabric-api-lookup-api-v1, fabric-networking-v0, fabric-dimensions-v1, fabric-registry-sync-v0, fabric-particles-v1, fabric-loot-tables-v1, fabric-transitive-access-wideners-v1, fabric-resource-loader-v0, fabric-events-lifecycle-v0, fabric-api-base, fabric-blockrenderlayer-v1, fabric-model-loading-api-v1, fabric-resource-conditions-api-v1, fabric-item-api-v1, fabric-gametest-api-v1, fabric-events-interaction-v0, fabric-crash-report-info-v1, fabric-convention-tags-v1, fabric-lifecycle-events-v1, fabric-commands-v0, fabric-rendering-data-attachment-v1, fabric-item-group-api-v1, fabric-message-api-v1, fabric-renderer-indigo, fabric-rendering-fluids-v1, fabric-game-rule-api-v1, fabricloader, fabric-renderer-registries-v1, fabric-transfer-api-v1, fabric-biome-api-v1, fabric-recipe-api-v1, fabric-renderer-api-v1, fabric-client-tags-api-v1, fabric-block-api-v1, fabric-api, fabric-rendering-v1, fabric-content-registries-v0, fabric-models-v0, fabric-mining-level-api-v1), file/mixinhotinjecttester-1.0.zip
+[13:51:20] [Worker-Main-1/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[13:51:21] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[13:51:21] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[13:51:21] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek High Definition Audio)
+[13:51:21] [Render thread/INFO] (Minecraft) Sound engine started
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[13:51:21] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[13:51:21] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[13:51:35] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[13:51:35] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[13:51:36] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 1.331 ms
+[13:51:36] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[13:51:36] [Server thread/INFO] (Minecraft) Generating keypair
+[13:51:38] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[13:51:39] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:39] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:39] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:39] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:40] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:40] [Render thread/INFO] (Minecraft) 准备生成区域中：0%
+[13:51:41] [Render thread/INFO] (Minecraft) 准备生成区域中：56%
+[13:51:41] [Render thread/INFO] (Minecraft) Time elapsed: 3212 ms
+[13:51:42] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[13:51:42] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[13:51:42] [Server thread/INFO] (Minecraft) Player87[local:E:3264090c] logged in with entity id 205 at (-309.77674958027126, 69.0, 80.69884726440121)
+[13:51:42] [Server thread/INFO] (Minecraft) Player87加入了游戏
+[13:51:42] [Server thread/INFO] (Minecraft) Player87取得了进度[整装上阵]
+[13:51:42] [Server thread/INFO] (Minecraft) Player87取得了进度[与火共舞]
+[13:51:42] [Server thread/INFO] (Minecraft) Player87取得了进度[钻石！]
+[13:51:42] [Server thread/INFO] (Minecraft) Player87取得了进度[获得升级]
+[13:51:42] [Server thread/INFO] (Minecraft) Player87取得了进度[来硬的]
+[13:51:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player87取得了进度[整装上阵]
+[13:51:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player87取得了进度[与火共舞]
+[13:51:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player87取得了进度[钻石！]
+[13:51:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player87取得了进度[获得升级]
+[13:51:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player87取得了进度[来硬的]
+[13:51:43] [Render thread/INFO] (Minecraft) Loaded 80 advancements
+[13:51:46] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[13:51:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[13:51:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[13:51:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[13:51:46] [Server thread/INFO] (Minecraft) Player87 lost connection: Internal Exception: java.nio.channels.ClosedChannelException
+[13:51:46] [Server thread/INFO] (Minecraft) Player87退出了游戏
+[13:51:47] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[13:51:47] [Server thread/INFO] (Minecraft) Stopping server
+[13:51:47] [Server thread/INFO] (Minecraft) Saving players
+[13:51:47] [Server thread/INFO] (Minecraft) Saving worlds
+[13:51:47] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[13:51:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[13:51:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[13:51:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[13:51:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[13:51:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[13:51:52] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[13:51:54] [Render thread/INFO] (Minecraft) Stopping!

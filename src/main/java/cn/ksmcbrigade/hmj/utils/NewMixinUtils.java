@@ -175,8 +175,13 @@ public class NewMixinUtils {
         TargetClassTransformer targetClassTransformer = new TargetClassTransformer(targetClass.getName(),transformer.transformClassBytes(targetClass.getName(),targetClass.getName(),FabricLauncherBase.getLauncher().getClassByteArray(targetClass.getName(),false)));
         getInstrumentation().addTransformer(targetClassTransformer);
         try {
-            getInstrumentation().redefineClasses(new ClassDefinition(targetClass,targetClassTransformer.transformedBytes()));
-        } catch (ClassNotFoundException | UnmodifiableClassException | NoSuchFieldException | IllegalAccessException | UnsupportedOperationException e) {
+            ClassNode node= new ClassNode();
+            ClassReader reader =new ClassReader(targetClassTransformer.transformedBytes());
+            reader.accept(node,ClassReader.EXPAND_FRAMES);
+            ClassDefinition definition = new ClassDefinition(targetClass,targetClassTransformer.transformedBytes());
+            //UnsafeUtils.ClassRedefiner.redefineClassByAddingURLs(definition);
+            getInstrumentation().redefineClasses(definition);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         Timer timer = new Timer();
