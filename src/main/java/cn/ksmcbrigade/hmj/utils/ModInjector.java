@@ -298,25 +298,6 @@ public class ModInjector {
 
     }
 
-    public static void addMixinFile(String mixinFile) throws NoSuchFieldException, InvocationTargetException, IllegalAccessException, NoSuchMethodException, IOException {
-        JsonObject object = JsonParser.parseString(IOUtils.toString(Objects.requireNonNull(ModInjector.class.getResourceAsStream("/" + mixinFile)))).getAsJsonObject();
-        String prefix = object.get("package").getAsString().replace("/",".").replace("\\",".");
-        List<String> classes = new ArrayList<>();
-        if(object.has("mixins")){
-            for (JsonElement mixins : object.getAsJsonArray("mixins")) {
-                classes.add(prefix+"."+mixins.getAsString().replace("/",".").replace("\\","."));
-            }
-        }
-        if(object.has("client")){
-            for (JsonElement mixins : object.getAsJsonArray("client")) {
-                classes.add(prefix+"."+mixins.getAsString().replace("/",".").replace("\\","."));
-            }
-        }
-        for (String aClass : classes) {
-            MixinUtils.addMixinClass(aClass);
-        }
-    }
-
     public static EntrypointContainer<ClientModInitializer> getEntrypoint(String modID){
         for(EntrypointContainer<ClientModInitializer> container:FabricLoader.getInstance().getEntrypointContainers("client", ClientModInitializer.class)){
             if(container.getProvider().getMetadata().getId().equalsIgnoreCase(modID)){
